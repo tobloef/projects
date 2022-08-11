@@ -21,7 +21,7 @@ const projectData: Project[] = [
   {
     name: "Markant - A Markdown Editor",
     thumbnail: markantThumbnail,
-    images: [markantImage1],
+    images: [markantImage1, markantImage1, markantImage1],
     description: <p></p>,
     tags: ["Web"],
     date: new Date("2017-02"),
