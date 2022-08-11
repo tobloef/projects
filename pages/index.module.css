@@ -1,0 +1,12 @@
+
+.main {
+    padding: 40px 20px 20px 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.projectsContainer {
+    overflow: auto;
+    flex: 1;
+}

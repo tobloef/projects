@@ -1,0 +1,28 @@
+.parameters {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 15px;
+    border-bottom: 2px solid hsl(0, 0%, 85%);
+}
+
+.parameters > *:not(:last-child) {
+    margin-right: 20px;
+}
+
+.parameter {
+    display: flex;
+    align-items: center;
+}
+
+.parameter span {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.tags {
+    width: 400px;
+}
+
+.order {
+    width: 200px;
+}
