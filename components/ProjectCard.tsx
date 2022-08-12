@@ -18,7 +18,9 @@ const ProjectCard = ({project}: ProjectCardProps) => {
       <Image
         src={project.thumbnail}
         alt={`Thumbnail for ${project.name}`}
-        layout={"responsive"}
+        layout={"intrinsic"}
+        objectFit={"cover"}
+        objectPosition={"top"}
       />
       <div className={classes.info}>
         <span className={classes.name}>{project.name}</span>
