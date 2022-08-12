@@ -26,11 +26,11 @@ const sortOptions: Array<SortOption> = [
   },
   {
     label: "↑ Date (asc.)",
-    value: (a, b) => 0,
+    value: (a, b) => a.date.valueOf() - b.date.valueOf(),
   },
   {
     label: "↓ Date (desc.)",
-    value: (a, b) => 0,
+    value: (a, b) => b.date.valueOf() - a.date.valueOf(),
   },
 ];
 

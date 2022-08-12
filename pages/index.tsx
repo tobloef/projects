@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 import ProjectModal from "../components/ProjectModal";
 
 export default function Index() {
-  const router = useRouter()
+  const router = useRouter();
 
   const [filterTags, setFilterTags] = useState<string[]>([]);
   const [sortFunc, setSortFunc] = useState<SortFunc<Project> | null>(null);

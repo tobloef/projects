@@ -13,7 +13,7 @@
 .modal {
 	min-width: 100px;
 	min-height: 100px;
-	width: 800px;
+	width: 850px;
 	height: 700px;
 	max-width: calc(100vw - 30px);
 	max-height: calc(100vh - 30px);
@@ -60,10 +60,6 @@
 .content {
 	display: flex;
 	flex-direction: column;
-	padding: 0px 30px;
+	padding: 20px 80px 30px 80px;
 	overflow: auto;
-}
-
-.content > *:last-child {
-	margin-bottom: 30px;
 }

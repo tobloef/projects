@@ -16,7 +16,14 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     return null;
   }
 
-  return <div className={classes.background}>
+  return <div
+    className={classes.background}
+    onClick={(e) => {
+      if (e.target === e.currentTarget) {
+        onClose();
+      }
+    }}
+  >
     <div className={classes.modal}>
       <div className={classes.header}>
         <span className={classes.title}>{project.name}</span>
