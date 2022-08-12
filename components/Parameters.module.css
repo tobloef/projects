@@ -1,17 +1,19 @@
 .parameters {
     display: flex;
     justify-content: flex-end;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
     border-bottom: 2px solid hsl(0, 0%, 85%);
+    flex-wrap: wrap;
 }
 
-.parameters > *:not(:last-child) {
-    margin-right: 20px;
+.parameters > *:not(:first-child) {
+    margin-left: 20px;
 }
 
 .parameter {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .parameter span {
