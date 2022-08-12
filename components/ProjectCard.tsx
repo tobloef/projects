@@ -20,7 +20,7 @@ const ProjectCard = ({project}: ProjectCardProps) => {
         alt={`Thumbnail for ${project.name}`}
         layout={"intrinsic"}
         objectFit={"cover"}
-        objectPosition={"top"}
+        objectPosition={project.options?.thumbnailAlignment ?? "top"}
       />
       <div className={classes.info}>
         <span className={classes.name}>{project.name}</span>
