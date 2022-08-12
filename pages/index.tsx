@@ -8,8 +8,12 @@ import projects, {
 } from "../utils/projects";
 import { useState } from "react";
 import { SortFunc } from "../utils/types";
+import { useRouter } from "next/router";
+import ProjectModal from "../components/ProjectModal";
 
 export default function Index() {
+  const router = useRouter()
+
   const [filterTags, setFilterTags] = useState<string[]>([]);
   const [sortFunc, setSortFunc] = useState<SortFunc<Project> | null>(null);
 
@@ -30,12 +34,16 @@ export default function Index() {
         <div className={classes.projectsContainer}>
           {shownProjects.map((project) => (
             <ProjectCard
-              key={project.name}
+              key={project.key}
               project={project}
             />
           ))}
         </div>
       </main>
+      <ProjectModal
+        project={projects.find((p) => p.key === router.query.project)}
+        onClose={() => router.push("/")}
+      />
     </div>
   )
 }
