@@ -1,33 +1,33 @@
 import Navbar from "../components/Navbar";
-import styles from "./index.module.css";
+import classes from "./index.module.css";
 import Parameters from "../components/Parameters";
 import ProjectCard from "../components/ProjectCard";
-import projectsData, {
+import projects, {
   Project,
   Tag,
-} from "../utils/projectsData";
+} from "../utils/projects";
 import { useState } from "react";
 import { SortFunc } from "../utils/types";
 
 export default function Index() {
-  const [filterTags, setFilterTags] = useState<Tag[]>([]);
+  const [filterTags, setFilterTags] = useState<string[]>([]);
   const [sortFunc, setSortFunc] = useState<SortFunc<Project> | null>(null);
 
-  const shownProjects: Project[] = projectsData
-    .filter((p) => filterTags.every((ft) => p.tags.includes(ft)))
+  const shownProjects: Project[] = projects
+    .filter((p) => filterTags.every((ft) => p.tags.some((t) => t.name === ft)))
     .sort(sortFunc ?? undefined);
 
   return (
-    <div>
+    <div className={classes.page}>
       <Navbar />
-      <main className={styles.main}>
+      <main className={classes.main}>
         <Parameters
           tags={filterTags}
           onTagsChange={setFilterTags}
           sortFunc={sortFunc}
           onSortFuncChange={(newSortFunc) => setSortFunc(() => newSortFunc)}
         />
-        <div className={styles.projectsContainer}>
+        <div className={classes.projectsContainer}>
           {shownProjects.map((project) => (
             <ProjectCard
               key={project.name}

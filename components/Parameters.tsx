@@ -1,4 +1,4 @@
-import styles from "./Parameters.module.css";
+import classes from "./Parameters.module.css";
 import Select, { StylesConfig } from "react-select";
 import {
   useEffect,
@@ -8,8 +8,11 @@ import chroma from "chroma-js";
 import {
   Project,
   Tag,
-} from "../utils/projectsData";
+  TagKey,
+  Tags,
+} from "../utils/projects";
 import { SortFunc } from "../utils/types";
+import { getTagStyle } from "../utils/getTagStyle";
 
 type SortOption = {
   label: string,
@@ -32,29 +35,22 @@ const sortOptions: Array<SortOption> = [
 ];
 
 type TagOption = {
-  label: Tag,
-  value: Tag,
+  label: string,
+  value: string,
   color: string,
 };
 
-const tagOptions: Array<TagOption> = [
-  {
-    label: "Web",
-    value: "Web",
-    color: '#FF8B00',
-  },
-  {
-    label: "Work",
-    value: "Work",
-    color: '#0052CC',
-  },
-];
+const tagOptions: Array<TagOption> = Object.values(Tags).map((t) => ({
+  label: t.name,
+  value: t.name,
+  color: t.color,
+}));
 
 type ParametersProps = {
   sortFunc: SortFunc<Project> | null,
   onSortFuncChange: (newValue: SortFunc<Project> | null) => void,
-  tags: Tag[],
-  onTagsChange: (newValue: Tag[]) => void,
+  tags: string[],
+  onTagsChange: (newValue: string[]) => void,
 }
 
 const Parameters = ({
@@ -106,34 +102,12 @@ const Parameters = ({
   const colourStyles: StylesConfig<TagOption> = {
     control: (styles) => ({ ...styles, backgroundColor: 'white' }),
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-      const color = chroma(data.color);
-      return {
-        ...styles,
-        backgroundColor: isDisabled
-          ? undefined
-          : isSelected
-            ? data.color
-            : isFocused
-              ? color.alpha(0.1).css()
-              : undefined,
-        color: isDisabled
-          ? '#ccc'
-          : isSelected
-            ? chroma.contrast(color, 'white') > 2
-              ? 'white'
-              : 'black'
-            : data.color,
-        cursor: isDisabled ? 'not-allowed' : 'default',
-
-        ':active': {
-          ...styles[':active'],
-          backgroundColor: !isDisabled
-            ? isSelected
-              ? data.color
-              : color.alpha(0.3).css()
-            : undefined,
-        },
-      };
+      return getTagStyle(data.color, {
+        styles,
+        isDisabled,
+        isFocused,
+        isSelected,
+      });
     },
     multiValue: (styles, { data }) => {
       const color = chroma(data.color);
@@ -157,11 +131,11 @@ const Parameters = ({
   };
 
   return (
-    <div className={styles.parameters}>
-      <div className={styles.parameter}>
+    <div className={classes.parameters}>
+      <div className={classes.parameter}>
         <span>Sort by</span>
         <Select
-          className={styles.order}
+          className={classes.order}
           name="sort"
           options={sortOptions}
           onChange={setSelectedSortOption}
@@ -169,10 +143,10 @@ const Parameters = ({
           value={selectedSortOption}
         />
       </div>
-      <div className={styles.parameter}>
+      <div className={classes.parameter}>
         <span>Filter by</span>
         <Select<TagOption, true>
-          className={styles.tags}
+          className={classes.tags}
           name="tags"
           options={tagOptions}
           isMulti

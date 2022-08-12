@@ -5,11 +5,11 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import classNames from "classnames";
-import styles from "./Navbar.module.css";
+import classes from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
-    <nav className={classNames(styles.navbar)}>
+    <nav className={classNames(classes.navbar)}>
       <h1>Projects by Tobias Løfgren</h1>
       <a href="https://tobloef.com/">
         <FontAwesomeIcon icon={faPenNib} />

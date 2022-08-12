@@ -3,10 +3,23 @@ import markantThumbnail from "../public/images/markant/thumbnail.png";
 import markantImage1 from "../public/images/markant/example.png";
 import { StaticImageData } from "next/image";
 
-export type Tag = (
-  | "Work"
-  | "Web"
-)
+export type Tag = {
+  name: string,
+  color: string,
+}
+
+export const Tags = {
+  WEB: {
+    name: "Web",
+    color: "#FF8B00"
+  },
+  WORK: {
+    name: "Work",
+    color: "#0052CC",
+  },
+} as const;
+
+export type TagKey = keyof typeof Tags;
 
 export type Project = {
   name: string,
@@ -17,15 +30,17 @@ export type Project = {
   tags: Tag[],
 };
 
-const projectData: Project[] = [
+const projects: Project[] = [
   {
-    name: "Markant - A Markdown Editor",
+    name: "Markant - An online Markdown editor",
     thumbnail: markantThumbnail,
     images: [markantImage1, markantImage1, markantImage1],
     description: <p></p>,
-    tags: ["Web"],
+    tags: [
+      Tags.WEB,
+    ],
     date: new Date("2017-02"),
   }
 ];
 
-export default projectData;
+export default projects;
