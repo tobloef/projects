@@ -2,6 +2,10 @@ import { ReactNode } from "react";
 import Image, { StaticImageData } from "next/image";
 import * as images from "./images";
 import { Property } from "csstype";
+import {
+  co2Thumbnail,
+  yotoThumbnail,
+} from "./images";
 
 export type Project = {
   key: string,
@@ -57,6 +61,10 @@ export const Tags = {
   SECURITY: {
     name: "Security",
     color: "#f60997",
+  },
+  JAVA: {
+    name: "Java",
+    color: "#1d397a",
   },
 } as const;
 
@@ -311,6 +319,129 @@ const projects: Project[] = [
         <br />
         <br />
         This project was my introduction to both HTML5 Canvas and WebSockets, two technologies that I have enjoyed using ever since. To me they represent two of the most fun aspects of the web: Easily sharable graphics programing and real-time collaboration.
+      </p>
+    </div>,
+  },
+  {
+    key: "co2",
+    name: "CO₂ Monitoring Dashboard",
+    thumbnail: images.co2Thumbnail,
+    tags: [
+      Tags.JS,
+    ],
+    date: new Date("2019-01"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.co2Thumbnail}
+        alt="Thumbnail"
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/co2">Github</a>
+          {" / "}
+          <a href="https://tobloef.com/co2/">Dashboard</a>
+        </p>
+        <p>
+          <b>Date:</b> Jan. 2019
+        </p>
+      </div>
+      <p>
+        Dashboard for monitoring CO₂ levels and temperature with a USB CO₂ sensor like <a href="https://www.amazon.com/CO2Meter-RAD-0301-Mini-Monitor-White/dp/B00H7HFINS">this one</a>. Made with HTML/CSS, Node.js, and Socket.io. The code is split into three parts: A web client for the dashboard, a server for receiving and storing data and a Node.js-based client for the machine connected to the CO₂ sensor (a Raspberry Pi for example).
+        <br />
+        <br />
+        Using this in environments with bad indoor climate really helped in staying fresh, reminding you to open the window <i>before</i> your head got too foggy instead of after.
+      </p>
+    </div>,
+  },
+  {
+    key: "yoto",
+    name: "You Only Tap Once - Casual Android game",
+    thumbnail: images.yotoThumbnail,
+    tags: [
+      Tags.JAVA,
+    ],
+    date: new Date("2015-11"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.yotoThumbnail}
+        alt="Thumbnail"
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/you-only-tap-once">Github</a>
+          {" / "}
+          <a href="https://play.google.com/store/apps/details?id=com.tobloef.yoto.android">Google Play</a>
+        </p>
+        <p>
+          <b>Date:</b> Nov. 2015
+        </p>
+      </div>
+      <p>
+        You Only Tap Once is a simple mobile game about chain reactions. It was made with Java and the <a href="https://libgdx.com/">libGDX</a> game framework. My very first Open Source project.
+        <br />
+        <br />
+        After a few years of starting many small programming projects, I wanted to actually finish and release something. So I scoped this project to be as small as I possibly could and still call it a game. And it worked! I finished the game, and even had time to add a few {"\"nice to have\""} features. Looking back on the code now {"it's"} clear that this was early days for me. Still, at the time I was proud that I managed to release it.
+        <br />
+        <br />
+        I also made a <a href="https://www.lexaloffle.com/bbs/?tid=48888">Pico-8 version</a> many years later, as a sort of tribute.
+      </p>
+    </div>,
+  },
+  {
+    key: "roll20-dice",
+    name: "Roll20 Fancy Dice Chrome extension",
+    thumbnail: images.roll20DiceScreenshot,
+    tags: [
+      Tags.JS,
+    ],
+    date: new Date("2020-01"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.roll20DiceScreenshot}
+        alt="Thumbnail"
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/roll20-fancy-dice">Github</a>
+          {" / "}
+          <a href="https://chrome.google.com/webstore/detail/custom-dice-for-roll20/hdjlljfnjnigpapdangkablekkoohdln">Chrome Web Store</a>
+        </p>
+        <p>
+          <b>Date:</b> Jan. 2020
+        </p>
+      </div>
+      <p>
+        A Chrome extension that adds fancier 3D dice to <a href="https://roll20.net/">Roll20</a>, an online virtual tabletop (VTT) for playing D&D and the like. Roll20 already support showing virtual dice when you roll during a game, but they are very plain and I wanted to give players a better opportunity to express themselves.
+        <br />
+        <br />
+        I accomplished this by writing a Chrome extension that would intercept requests to the Roll20 server, and inject its own behaviour in certain cases. This project was therefore largely a reverse engineering effort, working with the minified source code of Roll20. I also set up a small WebSocket server to synchronize settings between users, so they could see each {"other's"} dice.
+        <br />
+        <br />
+        During the project I set up a nice <a href="https://www.blender.org/">Blender</a> workflow for generating dice textures that wrapped seamlessly around the model. Making textures still required time and skill, however, so I wanted to make it a community effort. To that end I created <a href="https://github.com/tobloef/roll20-fancy-dice/wiki/How-to-add-your-own-dice-to-the-extension">extensive documentation</a> for the process I had developed, which paid off when the project received a number of cool contributions from the community.
       </p>
     </div>,
   },

@@ -12,3 +12,9 @@ export { default as ctfThumbnail } from "../public/images/ctf/thumbnail.png"
 export { default as ctfExample } from "../public/images/ctf/example.png"
 
 export { default as cardFuThumbnail } from "../public/images/card-fu/thumbnail.png"
+
+export { default as co2Thumbnail } from "../public/images/co2/thumbnail.png"
+
+export { default as yotoThumbnail } from "../public/images/yoto/thumbnail.png"
+
+export { default as roll20DiceScreenshot } from "../public/images/roll20-dice/screenshot.png"
