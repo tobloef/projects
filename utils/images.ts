@@ -18,3 +18,5 @@ export { default as co2Thumbnail } from "../public/images/co2/thumbnail.png"
 export { default as yotoThumbnail } from "../public/images/yoto/thumbnail.png"
 
 export { default as roll20DiceScreenshot } from "../public/images/roll20-dice/screenshot.png"
+
+export { default as text2mindmapScreenshot } from "../public/images/text2mindmap/example.png"

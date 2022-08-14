@@ -4,8 +4,10 @@ import * as images from "./images";
 import { Property } from "csstype";
 import {
   co2Thumbnail,
+  text2mindmapScreenshot,
   yotoThumbnail,
 } from "./images";
+import Link from "next/link";
 
 export type Project = {
   key: string,
@@ -171,7 +173,7 @@ const projects: Project[] = [
           {" / "}
           <a href="https://github.com/tobloef/putpix-3d-rust-wasm">Github (Rust)</a>
           {" / "}
-          <a href="https://tobloef.com/putpix-3d-ts/">Demo</a>
+          <a href="https://tobloef.com/putpix-3d-ts/">Demo (TS Version)</a>
         </p>
         <p>
           <b>Date:</b> Aug. 2022
@@ -442,6 +444,43 @@ const projects: Project[] = [
         <br />
         <br />
         During the project I set up a nice <a href="https://www.blender.org/">Blender</a> workflow for generating dice textures that wrapped seamlessly around the model. Making textures still required time and skill, however, so I wanted to make it a community effort. To that end I created <a href="https://github.com/tobloef/roll20-fancy-dice/wiki/How-to-add-your-own-dice-to-the-extension">extensive documentation</a> for the process I had developed, which paid off when the project received a number of cool contributions from the community.
+      </p>
+    </div>,
+  },
+  {
+    key: "text2mindmap",
+    name: "Text2MindMap - Archive Edition",
+    thumbnail: images.text2mindmapScreenshot,
+    tags: [
+      Tags.JS,
+    ],
+    date: new Date("2018-03"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.text2mindmapScreenshot}
+        alt="Thumbnail"
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://tobloef.com/text2mindmap/">Homepage</a>
+        </p>
+        <p>
+          <b>Date:</b> Mar. 2018
+        </p>
+      </div>
+      <p>
+        Back in 2017 I was an avid user of <a href="https://text2mindmap.com/">text2mindmap.com</a>, so when it suddenly shut down I was keen to find an alternative. At the time no such thing existed so I cobbled together code from the old website with my own <Link href="/?project=markant" shallow>Markant editor</Link>. Originally intended just for personal use, the site quickly blew up and now services about ~20,000 users a month.
+        <br />
+        <br />
+        Seeing such an interest for the project, I have always wanted to give people a better alternative than my quick duct tape solution. So now {"I'm"} slowly tinkering away at a new version of the site, written completely from scratch for the collaborative web.
       </p>
     </div>,
   },
