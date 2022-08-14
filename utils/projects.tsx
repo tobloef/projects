@@ -4,6 +4,7 @@ import * as images from "./images";
 import { Property } from "csstype";
 import {
   co2Thumbnail,
+  faceGeneratorExample,
   text2mindmapScreenshot,
   yotoThumbnail,
 } from "./images";
@@ -462,6 +463,8 @@ const projects: Project[] = [
       <Image
         src={images.text2mindmapScreenshot}
         alt="Thumbnail"
+        height={1000}
+        objectFit={"contain"}
       />
       <div style={{
         display: "flex",
@@ -481,6 +484,91 @@ const projects: Project[] = [
         <br />
         <br />
         Seeing such an interest for the project, I have always wanted to give people a better alternative than my quick duct tape solution. So now {"I'm"} slowly tinkering away at a new version of the site, written completely from scratch for the collaborative web.
+      </p>
+    </div>,
+  },
+  {
+    key: "nft",
+    name: "Numerous Face Tokens - Mock trading site",
+    thumbnail: images.nftFrontpage,
+    tags: [
+      Tags.TS,
+    ],
+    date: new Date("2022-01"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.nftFrontpage}
+        alt="Thumbnail"
+        height={1100}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/numerous-face-tokens">GitHub</a>
+          {" / "}
+          <a href="https://server.tobloef.com/nft/react/">Homepage</a>
+        </p>
+        <p>
+          <b>Date:</b> Jan. 2022
+        </p>
+      </div>
+      <p>
+        A mock trading platform where people can buy and sell so-called <Link href="/?project=face-generator" shallow>Numerous Face Tokens</Link>. I designed this project to cover all the basics of a web app, with the intent to re-implement parts of the project using multiple technologies, as a <a href="https://en.wikipedia.org/wiki/Kata#Outside_martial_arts">kata</a> of sorts. I think this provides a valuable opportunity to experiment with new tools in a focused manner.
+        <br />
+        <br />
+        The initial version of the app was a React SPA frontend with a Rest-ish Node.js API on the backend. I focused heavily on end-to-end type safety, and thus tried out a few different styles of architectures for this. In the end I concluded that while it was possible to achieve the level of type safety I wanted, it {"wasn't"} very fun with the tools I had chosen.
+        <br />
+        <br />
+        Next up will be trying out <a href="https://graphql.org/">GraphQL</a> (in progress), <a href="https://trpc.io/">tRPC</a> and SSR with <a href="https://nextjs.org/">Next.js</a>.
+      </p>
+    </div>,
+  },
+  {
+    key: "face-generator",
+    name: "Cartoon Face Generator",
+    thumbnail: images.faceGeneratorExample,
+    tags: [
+      Tags.JS,
+    ],
+    date: new Date("2021-10"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.faceGeneratorExample}
+        alt="Thumbnail"
+        height={400}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/face-generator">GitHub</a>
+          {" / "}
+          <a href="https://server.tobloef.com/faces/random.png">Generate a face</a> (refresh for a new one)
+        </p>
+        <p>
+          <b>Date:</b> Oct. 2021
+        </p>
+      </div>
+      <p>
+        Created as a parody of CryptoPunks, this deliberately low-effort project turned out more fun than anticipated. Go to <a href="https://server.tobloef.com/faces/random.png">/random.png</a> for a random face. Or to a specific file name, like <a href="https://server.tobloef.com/faces/tobloef.png">/tobloef.png</a>, for a static one that uses the file name as the seed.
+        <br />
+        <br />
+        Built with Node.js and <a href="https://sharp.pixelplumbing.com/">Sharp</a> for image processing. I later used the face generator in another project, <Link href={"/?project=nft"} shallow>Numerous Face Tokens</Link>.
       </p>
     </div>,
   },

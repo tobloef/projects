@@ -20,3 +20,11 @@ export { default as yotoThumbnail } from "../public/images/yoto/thumbnail.png"
 export { default as roll20DiceScreenshot } from "../public/images/roll20-dice/screenshot.png"
 
 export { default as text2mindmapScreenshot } from "../public/images/text2mindmap/example.png"
+
+export { default as faceGeneratorExample } from "../public/images/face-generator/example.png"
+
+export { default as nftFrontpage } from "../public/images/nft/frontpage.png"
+export { default as nftNft } from "../public/images/nft/nft.png"
+export { default as nftNfts } from "../public/images/nft/nfts.png"
+export { default as nftUser } from "../public/images/nft/user.png"
+export { default as nftTrades } from "../public/images/nft/trades.png"
