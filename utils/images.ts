@@ -28,3 +28,6 @@ export { default as nftNft } from "../public/images/nft/nft.png"
 export { default as nftNfts } from "../public/images/nft/nfts.png"
 export { default as nftUser } from "../public/images/nft/user.png"
 export { default as nftTrades } from "../public/images/nft/trades.png"
+
+export { default as creativeExample } from "../public/images/creative/example.png"
+export { default as creativeMidiController } from "../public/images/creative/midi-controller.png"

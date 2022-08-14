@@ -494,7 +494,7 @@ const projects: Project[] = [
     tags: [
       Tags.TS,
     ],
-    date: new Date("2022-01"),
+    date: new Date("2021-11"),
     options: {
       thumbnailAlignment: "top"
     },
@@ -517,14 +517,14 @@ const projects: Project[] = [
           <a href="https://server.tobloef.com/nft/react/">Homepage</a>
         </p>
         <p>
-          <b>Date:</b> Jan. 2022
+          <b>Date:</b> Nov. 2021
         </p>
       </div>
       <p>
         A mock trading platform where people can buy and sell so-called <Link href="/?project=face-generator" shallow>Numerous Face Tokens</Link>. I designed this project to cover all the basics of a web app, with the intent to re-implement parts of the project using multiple technologies, as a <a href="https://en.wikipedia.org/wiki/Kata#Outside_martial_arts">kata</a> of sorts. I think this provides a valuable opportunity to experiment with new tools in a focused manner.
         <br />
         <br />
-        The initial version of the app was a React SPA frontend with a Rest-ish Node.js API on the backend. I focused heavily on end-to-end type safety, and thus tried out a few different styles of architectures for this. In the end I concluded that while it was possible to achieve the level of type safety I wanted, it {"wasn't"} very fun with the tools I had chosen.
+        The initial version of the app was a React SPA frontend with a Rest-ish Node.js API on the backend and <a href="https://www.prisma.io/">Prisma ORM</a> for database access. I focused heavily on end-to-end type safety and iterated on an architecture that made this easy. In the end I concluded that while it was possible to achieve the level of type safety I wanted, it {"wasn't"} very fun with the tools I had chosen.
         <br />
         <br />
         Next up will be trying out <a href="https://graphql.org/">GraphQL</a> (in progress), <a href="https://trpc.io/">tRPC</a> and SSR with <a href="https://nextjs.org/">Next.js</a>.
@@ -570,6 +570,48 @@ const projects: Project[] = [
         <br />
         Built with Node.js and <a href="https://sharp.pixelplumbing.com/">Sharp</a> for image processing. I later used the face generator in another project, <Link href={"/?project=nft"} shallow>Numerous Face Tokens</Link>.
       </p>
+    </div>,
+  },
+  {
+    key: "creative",
+    name: "Creative Programming Sketches",
+    thumbnail: images.creativeExample,
+    tags: [
+      Tags.JS,
+    ],
+    date: new Date("2021-05"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.creativeExample}
+        alt="Thumbnail"
+        height={1000}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/face-generator">GitHub</a>
+          {" / "}
+          <a href="https://tobloef.com/creative/sketches.html">List of sketches</a>
+        </p>
+        <p>
+          <b>Date:</b> May 2021
+        </p>
+      </div>
+      <p>
+        A number of small generative art sketches. Each sketch takes a number of parameters controlled either with on-screen sliders or with a MIDI controller like the one pictured below.
+      </p>
+      <Image
+        src={images.creativeMidiController}
+        alt="Thumbnail"
+      />
     </div>,
   },
 ];
