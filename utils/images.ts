@@ -31,3 +31,9 @@ export { default as nftTrades } from "../public/images/nft/trades.png"
 
 export { default as creativeExample } from "../public/images/creative/example.png"
 export { default as creativeMidiController } from "../public/images/creative/midi-controller.png"
+
+export { default as neuralnetThumbnail } from "../public/images/neuralnet/thumbnail.jpeg"
+
+export { default as base64Example } from "../public/images/base64/example.png"
+
+export { default as mapExample } from "../public/images/map/example.png"

@@ -3,6 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import * as images from "./images";
 import { Property } from "csstype";
 import {
+  base64Example,
   co2Thumbnail,
   faceGeneratorExample,
   text2mindmapScreenshot,
@@ -597,7 +598,7 @@ const projects: Project[] = [
         <p>
           <b>Links:</b>
           {" "}
-          <a href="https://github.com/tobloef/face-generator">GitHub</a>
+          <a href="https://github.com/tobloef/creative">GitHub</a>
           {" / "}
           <a href="https://tobloef.com/creative/sketches.html">List of sketches</a>
         </p>
@@ -606,12 +607,145 @@ const projects: Project[] = [
         </p>
       </div>
       <p>
-        A number of small generative art sketches. Each sketch takes a number of parameters controlled either with on-screen sliders or with a MIDI controller like the one pictured below.
+        A number of small generative art sketches. Each sketch takes a number of parameters controlled either with on-screen sliders or with a MIDI controller like the one pictured below using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API">WebMIDI</a>.
       </p>
       <Image
         src={images.creativeMidiController}
         alt="Thumbnail"
       />
+    </div>,
+  },
+  {
+    key: "neurealnet",
+    name: "Neural Network from scratch",
+    thumbnail: images.neuralnetThumbnail,
+    tags: [
+      Tags.PYTHON,
+    ],
+    date: new Date("2017-12"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.neuralnetThumbnail}
+        alt="Thumbnail"
+        height={300}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/neural-network">GitHub</a>
+        </p>
+        <p>
+          <b>Date:</b> Dec. 2017
+        </p>
+      </div>
+      <p>
+        Python implementation of a neural network, written without the use of any machine learning libraries. It recognizes hand-written numbers, trained on the classic <a href="http://yann.lecun.com/exdb/mnist/">MNIST dataset</a>. I used <a href="https://numpy.org/">NumPy</a> for math and Micheal {"Nielsen's"} <a href="https://github.com/mnielsen/neural-networks-and-deep-learning/blob/master/src/mnist_loader.py">mnist_loader.py</a> for loading the data.
+        <br />
+        <br />
+        After some testing I arrived at hyperparameters that results in ~95% accuracy.
+      </p>
+    </div>,
+  },
+  {
+    key: "base64",
+    name: "Specialized base64 viewer",
+    thumbnail: images.base64Example,
+    tags: [
+      Tags.TS,
+      Tags.WORK,
+    ],
+    date: new Date("2022-03"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.base64Example}
+        alt="Thumbnail"
+        height={1400}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://clearvoyage.github.io/base64-viewer/">Homepage</a>
+        </p>
+        <p>
+          <b>Date:</b> Mar. 2022
+        </p>
+      </div>
+      <p>
+        A small internal tool created at ClearVoyage to view certain report formats sent as base64-encoded data. Essentially original data is represented as JSON, which is then zipped and converted to base64. This tool reverses that process for easy viewing.
+      </p>
+    </div>,
+  },
+  {
+    key: "map",
+    name: "Map Application",
+    thumbnail: images.mapExample,
+    tags: [
+      Tags.JAVA,
+    ],
+    date: new Date("2019-05"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.mapExample}
+        alt="Thumbnail"
+        height={1000}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/map-application">GitHub</a>
+        </p>
+        <p>
+          <b>Date:</b> May. 2019
+        </p>
+      </div>
+      <p>
+        A Java application for displaying and navigating map data from OpenStreetMap. Created in collaboration with fellow students as part of the first year project at the IT-University of Copenhagen.
+        <br />
+        <br />
+        The application is capable on performance fuzzy address searching and route planing on large OSM datasets, as well as performant rendering at any zoom level. It was written in Java with <a href="https://openjfx.io/">JavaFX</a> for the UI.
+      </p>
     </div>,
   },
 ];
