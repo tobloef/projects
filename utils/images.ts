@@ -37,3 +37,6 @@ export { default as neuralnetThumbnail } from "../public/images/neuralnet/thumbn
 export { default as base64Example } from "../public/images/base64/example.png"
 
 export { default as mapExample } from "../public/images/map/example.png"
+
+export { default as nemCvThumbnail } from "../public/images/nem-cv/thumbnail.png"
+export { default as nemCvExample } from "../public/images/nem-cv/example.png"

@@ -6,6 +6,7 @@ import {
   base64Example,
   co2Thumbnail,
   faceGeneratorExample,
+  nemCvThumbnail,
   text2mindmapScreenshot,
   yotoThumbnail,
 } from "./images";
@@ -745,6 +746,51 @@ const projects: Project[] = [
         <br />
         <br />
         The application is capable on performance fuzzy address searching and route planing on large OSM datasets, as well as performant rendering at any zoom level. It was written in Java with <a href="https://openjfx.io/">JavaFX</a> for the UI.
+      </p>
+    </div>,
+  },
+  {
+    key: "nem-cv",
+    name: "CV Generator with custom web framework",
+    thumbnail: images.nemCvThumbnail,
+    tags: [
+      Tags.JS,
+    ],
+    date: new Date("2019-05"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.nemCvExample}
+        alt="Thumbnail"
+        height={1000}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/nem-cv">GitHub</a>
+        </p>
+        <p>
+          <b>Date:</b> May. 2019
+        </p>
+      </div>
+      <p>
+        A Squarespace-like CV generator web app created as part of a course at the IT University of Copenhagen. I was mostly responsible for implementing the designs created by another member of my group.
+        <br />
+        <br />
+        We wanted to try vanilla <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Web Components</a>, but after finding that lacking I ended up creating my own small component framework built on top of Web Components. The framework allowed you to easily define your HTML/CSS/JS inside a single reusable component, similar to <a href="https://vuejs.org/">Vue</a> or <a href="https://svelte.dev/">Svelte</a>. You can view an example of a component <a href="https://github.com/tobloef/nem-cv/blob/master/components/editor/SideBar.js">here</a>.
       </p>
     </div>,
   },
