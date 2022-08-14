@@ -40,3 +40,5 @@ export { default as mapExample } from "../public/images/map/example.png"
 
 export { default as nemCvThumbnail } from "../public/images/nem-cv/thumbnail.png"
 export { default as nemCvExample } from "../public/images/nem-cv/example.png"
+
+export { default as fooblogExample } from "../public/images/fooblog/example.png"

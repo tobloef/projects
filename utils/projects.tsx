@@ -738,11 +738,11 @@ const projects: Project[] = [
           <a href="https://github.com/tobloef/map-application">GitHub</a>
         </p>
         <p>
-          <b>Date:</b> May. 2019
+          <b>Date:</b> May 2019
         </p>
       </div>
       <p>
-        A Java application for displaying and navigating map data from OpenStreetMap. Created in collaboration with fellow students as part of the first year project at the IT-University of Copenhagen.
+        A Java application for displaying and navigating map data from OpenStreetMap. Created in collaboration with fellow students as part of the first year project at the IT University of Copenhagen.
         <br />
         <br />
         The application is capable on performance fuzzy address searching and route planing on large OSM datasets, as well as performant rendering at any zoom level. It was written in Java with <a href="https://openjfx.io/">JavaFX</a> for the UI.
@@ -783,7 +783,7 @@ const projects: Project[] = [
           <a href="https://github.com/tobloef/nem-cv">GitHub</a>
         </p>
         <p>
-          <b>Date:</b> May. 2019
+          <b>Date:</b> May 2019
         </p>
       </div>
       <p>
@@ -791,6 +791,48 @@ const projects: Project[] = [
         <br />
         <br />
         We wanted to try vanilla <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Web Components</a>, but after finding that lacking I ended up creating my own small component framework built on top of Web Components. The framework allowed you to easily define your HTML/CSS/JS inside a single reusable component, similar to <a href="https://vuejs.org/">Vue</a> or <a href="https://svelte.dev/">Svelte</a>. You can view an example of a component <a href="https://github.com/tobloef/nem-cv/blob/master/components/editor/SideBar.js">here</a>.
+      </p>
+    </div>,
+  },
+  {
+    key: "fooblog",
+    name: "FooBlog - Blogging platform",
+    thumbnail: images.fooblogExample,
+    tags: [
+      Tags.JS,
+    ],
+    date: new Date("2019-12"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.fooblogExample}
+        alt="Thumbnail"
+        height={900}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/fooblog">GitHub</a>
+        </p>
+        <p>
+          <b>Date:</b> Dec. 2019
+        </p>
+      </div>
+      <p>
+        FooBlog is a Medium-like blogging platform where you can view other users posts and register to write your own posts and comments. I created it to learn new web technologies, such as <a href="https://graphql.org/">GraphQL</a>, <a href="https://reactjs.org/docs/hooks-intro.html">React Hooks</a> and <a href="https://sequelize.org/">Sequelize</a>.
       </p>
     </div>,
   },
