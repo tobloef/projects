@@ -48,3 +48,8 @@ export { default as realtimeEditorExample } from "../public/images/realtime-edit
 export { default as vowkeeperExample } from "../public/images/vowkeeper/example.png"
 
 export { default as polychatExample } from "../public/images/polychat/example.png"
+
+export { default as glitchRose } from "../public/images/glitch-tool/rose.png"
+export { default as glitchViking } from "../public/images/glitch-tool/viking.png"
+
+export { default as projectsExample } from "../public/images/projects/example.png"

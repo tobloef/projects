@@ -2,16 +2,8 @@ import { ReactNode } from "react";
 import Image, { StaticImageData } from "next/image";
 import * as images from "./images";
 import { Property } from "csstype";
-import {
-  base64Example,
-  co2Thumbnail,
-  faceGeneratorExample,
-  nemCvThumbnail,
-  realtimeEditorExample,
-  text2mindmapScreenshot,
-  yotoThumbnail,
-} from "./images";
 import Link from "next/link";
+import { projectsExample } from "./images";
 
 export type Project = {
   key: string,
@@ -32,6 +24,10 @@ export type Tag = {
 }
 
 export const Tags = {
+  WORK: {
+    name: "Work-related",
+    color: "#0fbe00",
+  },
   TS: {
     name: "TypeScript",
     color: "#00B8D9"
@@ -40,124 +36,55 @@ export const Tags = {
     name: "JavaScript",
     color: "#d3a200"
   },
-  WORK: {
-    name: "Work-related",
-    color: "#0052CC",
-  },
-  WIP: {
-    name: "Work in progress",
-    color: "#ff3f16",
-  },
-  PYTHON: {
-    name: "Python",
-    color: "#00875A",
-  },
-  RUST: {
-    name: "Rust",
-    color: "#F46623",
-  },
-  GAME: {
-    name: "Game",
-    color: "#9A09F6",
+  REACT: {
+    name: "React",
+    color: "#5CC8FF"
   },
   CSHARP: {
     name: "C#",
     color: "#09F6A3",
   },
-  SECURITY: {
-    name: "Security",
-    color: "#F60997",
-  },
-  JAVA: {
-    name: "Java",
-    color: "#1D397A",
+  PYTHON: {
+    name: "Python",
+    color: "#00875A",
   },
   SVELTE: {
     name: "Svelte",
     color: "#FFAE00"
   },
+  RUST: {
+    name: "Rust",
+    color: "#F46623",
+  },
+  JAVA: {
+    name: "Java",
+    color: "#1D397A",
+  },
   GO: {
-    name: "GO",
-    color: "#00acff"
+    name: "Go",
+    color: "#0077ff"
   },
   ELIXIR: {
     name: "Elixir",
     color: "#ff76ec"
-  }
+  },
+  GAME: {
+    name: "Game",
+    color: "#9A09F6",
+  },
+  SECURITY: {
+    name: "Security",
+    color: "#F60997",
+  },
+  WIP: {
+    name: "Work in progress",
+    color: "#ff3f16",
+  },
 } as const;
 
 export type TagKey = keyof typeof Tags;
 
 const projects: Project[] = [
-  {
-    key: "markant",
-    name: "Markant - An online Markdown editor",
-    thumbnail: images.markantThumbnail,
-    tags: [
-      Tags.JS,
-    ],
-    date: new Date("2017-02"),
-    description: <div>
-      <Image
-        src={images.markantExample}
-        alt="Thumbnail"
-      />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          <a href="https://github.com/tobloef/markant">Github</a>
-          {" / "}
-          <a href="https://tobloef.com/markant/">Homepage</a>
-        </p>
-        <p>
-          <b>Date:</b> Feb. 2017
-        </p>
-      </div>
-      <p>
-        Markant is a web-based Markdown editor with support for LaTeX math notation. Originally meant to suit my own needs (studying Computer Science and Mathematics), I eventually decided to polish it up for other people to use. Built with vanilla HTML, CSS and JS, with a bit of jQuery, because I at the time wanted to get away from frameworks for a little while. It uses <a href="https://github.com/codemirror/dev/">CodeMirror</a> for text-editing, <a href="https://github.com/markdown-it/markdown-it">markdown-it</a> to render Markdown as HTML and <a href="https://github.com/KaTeX/KaTeX">KaTeX</a> to render LaTeX math.
-        <br />
-        <br />
-        Key takeaways from this project was strengthened my core web development skills, releasing a finished product to the public and dealing with feedback from users, and experimenting with marketing for software.
-      </p>
-    </div>,
-  },
-  {
-    key: "set-solver",
-    name: "Webcam-based solver for Set",
-    thumbnail: images.setSolverThumbnail,
-    tags: [
-      Tags.PYTHON,
-    ],
-    date: new Date("2015-03"),
-    description: <div>
-      <Image
-        src={images.setSolverExample}
-        alt="Thumbnail"
-        height={1000}
-        objectFit={"contain"}
-      />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          Lost to time
-        </p>
-        <p>
-          <b>Date:</b> Mar. 2015
-        </p>
-      </div>
-      <p>
-        Program to find sets in the popular puzzle card game <a href="https://www.playmonster.com/brands/set/">Set</a>. It used your webcam to look at the table and then highlighted valid solutions on the screen. It was implemented in Python with <a href="https://opencv.org/">OpenCV</a>.
-      </p>
-    </div>,
-  },
   {
     key: "3d-renderer",
     name: "PutPix - 3D renderer from scratch",
@@ -207,309 +134,12 @@ const projects: Project[] = [
     </div>,
   },
   {
-    key: "bird-in-paradise",
-    name: "A Bird in Paradise",
-    thumbnail: images.birdInParadiseThumbnail,
-    tags: [
-      Tags.GAME,
-      Tags.CSHARP,
-    ],
-    date: new Date("2018-12"),
-    options: {
-      thumbnailAlignment: "bottom"
-    },
-    description: <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/_WFx9qkayqU"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{
-          margin: "0 auto",
-        }}
-      />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          <a href="https://ldjam.com/events/ludum-dare/43/a-bird-in-paradise">Ludum Dare Entry</a>
-        </p>
-        <p>
-          <b>Date:</b> Dec. 2018
-        </p>
-      </div>
-      <p>
-        A small game about flying and sacrificing people to the volcano god, made in Unity. Created by me and a two friends for the Ludum Dare 43 game jam, and was therefore made in just a few days. We placed 65th out of 2,508 in {"Fun"} and 270th overall.
-        <br />
-        <br />
-        I was primarily responsible for coding the movement system in C#, and it ended up being pretty satisfying in how you had to build and keep up your momentum. This project was also a good lesson in how much fun games can be, when they are made by (and for) people you know. A couple of my friends started speedrunning the game and discovered a number of cool exploits. I hope to one day explore this more, creating small games specifically for friends or the tools for others to do so.
-      </p>
-    </div>,
-  },
-  {
-    key: "ctf",
-    name: "Security CTFs",
-    thumbnail: images.ctfThumbnail,
-    tags: [
-      Tags.SECURITY,
-    ],
-    date: new Date("2017-10"),
-    options: {
-      thumbnailAlignment: "center"
-    },
-    description: <div>
-      <Image
-        src={images.ctfExample}
-        alt="Thumbnail"
-        height={700}
-        objectFit={"contain"}
-      />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Write-ups:</b>
-          {" "}
-          <a href="https://tobloef.com/ctf/mitre-ctf-2017">Pwn2Win CTF Write-up</a>
-          {" / "}
-          <a href="https://tobloef.com/ctf/cybercamp-ctf-2017">CyberCamp CTF Quals</a>
-          {" / "}
-          <a href="https://tobloef.com/ctf/pwn2win-ctf-2017">STEM CTF</a>
-        </p>
-        <p>
-          <b>Date:</b> Oct. 2017
-        </p>
-      </div>
-      <p>
-        During Oct. 2017 I focused heavily on doing CTFs (a type of cyber security competition) in preparation for the <a href="https://ecsc.eu/">European Cyber Security Challenge</a> finals in Malaga. I focused mostly on web security, programming challenges and forensics, while the rest of my teammates on the Danish national team focused on other topics.
-        <br />
-        <br />
-        Along with these CTFs I made a number of write-ups of the challenges I had solved during the competitions. I believe write-ups like those are essential to the CTF ecosystem, as they allow everyone to learn from each other and crucially helps you solidify the knowledge you gained during the frantic competitions hours.
-      </p>
-    </div>,
-  },
-  {
-    key: "card-fu",
-    name: "Card Fu - Online multiplayer card game",
-    thumbnail: images.cardFuThumbnail,
-    tags: [
-      Tags.JS,
-      Tags.GAME,
-    ],
-    date: new Date("2016-02"),
-    options: {
-      thumbnailAlignment: "top"
-    },
-    description: <div>
-      <Image
-        src={images.cardFuThumbnail}
-        alt="Thumbnail"
-      />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          <a href="https://github.com/tobloef/card-fu">Github</a>
-          {" / "}
-          <a href="https://cardfu.herokuapp.com/">Play the game</a>
-        </p>
-        <p>
-          <b>Date:</b> Feb. 2016
-        </p>
-      </div>
-      <p>
-        Card-Fu is an online multiplayer game based on {"Club Penguin's"} Card-Jitsu mini-game. Built with HTML5 Canvas, Node.js, and Socket.io.
-        <br />
-        <br />
-        This project was my introduction to both HTML5 Canvas and WebSockets, two technologies that I have enjoyed using ever since. To me they represent two of the most fun aspects of the web: Easily sharable graphics programing and real-time collaboration.
-      </p>
-    </div>,
-  },
-  {
-    key: "co2",
-    name: "CO₂ Monitoring Dashboard",
-    thumbnail: images.co2Thumbnail,
-    tags: [
-      Tags.JS,
-    ],
-    date: new Date("2019-01"),
-    options: {
-      thumbnailAlignment: "top"
-    },
-    description: <div>
-      <Image
-        src={images.co2Thumbnail}
-        alt="Thumbnail"
-      />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          <a href="https://github.com/tobloef/co2">Github</a>
-          {" / "}
-          <a href="https://tobloef.com/co2/">Dashboard</a>
-        </p>
-        <p>
-          <b>Date:</b> Jan. 2019
-        </p>
-      </div>
-      <p>
-        Dashboard for monitoring CO₂ levels and temperature with a USB CO₂ sensor like <a href="https://www.amazon.com/CO2Meter-RAD-0301-Mini-Monitor-White/dp/B00H7HFINS">this one</a>. Made with HTML/CSS, Node.js, and Socket.io. The code is split into three parts: A web client for the dashboard, a server for receiving and storing data and a Node.js-based client for the machine connected to the CO₂ sensor (a Raspberry Pi for example).
-        <br />
-        <br />
-        Using this in environments with bad indoor climate really helped in staying fresh, reminding you to open the window <i>before</i> your head got too foggy instead of after.
-      </p>
-    </div>,
-  },
-  {
-    key: "yoto",
-    name: "You Only Tap Once - Casual Android game",
-    thumbnail: images.yotoThumbnail,
-    tags: [
-      Tags.JAVA,
-      Tags.GAME,
-    ],
-    date: new Date("2015-11"),
-    options: {
-      thumbnailAlignment: "top"
-    },
-    description: <div>
-      <Image
-        src={images.yotoThumbnail}
-        alt="Thumbnail"
-      />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          <a href="https://github.com/tobloef/you-only-tap-once">Github</a>
-          {" / "}
-          <a href="https://play.google.com/store/apps/details?id=com.tobloef.yoto.android">Google Play</a>
-        </p>
-        <p>
-          <b>Date:</b> Nov. 2015
-        </p>
-      </div>
-      <p>
-        You Only Tap Once is a simple mobile game about chain reactions. It was made with Java and the <a href="https://libgdx.com/">libGDX</a> game framework. My very first Open Source project.
-        <br />
-        <br />
-        After a few years of starting many small programming projects, I wanted to actually finish and release something. So I scoped this project to be as small as I possibly could and still call it a game. And it worked! I finished the game, and even had time to add a few {"\"nice to have\""} features. Looking back on the code now {"it's"} clear that this was early days for me. Still, at the time I was proud that I managed to release it.
-        <br />
-        <br />
-        I also made a <a href="https://www.lexaloffle.com/bbs/?tid=48888">Pico-8 version</a> many years later, as a sort of tribute.
-      </p>
-    </div>,
-  },
-  {
-    key: "roll20-dice",
-    name: "Roll20 Fancy Dice Chrome extension",
-    thumbnail: images.roll20DiceScreenshot,
-    tags: [
-      Tags.JS,
-    ],
-    date: new Date("2020-01"),
-    options: {
-      thumbnailAlignment: "top"
-    },
-    description: <div>
-      <Image
-        src={images.roll20DiceScreenshot}
-        alt="Thumbnail"
-      />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          <a href="https://github.com/tobloef/roll20-fancy-dice">Github</a>
-          {" / "}
-          <a href="https://chrome.google.com/webstore/detail/custom-dice-for-roll20/hdjlljfnjnigpapdangkablekkoohdln">Chrome Web Store</a>
-        </p>
-        <p>
-          <b>Date:</b> Jan. 2020
-        </p>
-      </div>
-      <p>
-        A Chrome extension that adds fancier 3D dice to <a href="https://roll20.net/">Roll20</a>, an online virtual tabletop (VTT) for playing D&D and the like. Roll20 already support showing virtual dice when you roll during a game, but they are very plain and I wanted to give players a better opportunity to express themselves.
-        <br />
-        <br />
-        I accomplished this by writing a Chrome extension that would intercept requests to the Roll20 server, and inject its own behaviour in certain cases. This project was therefore largely a reverse engineering effort, working with the minified source code of Roll20. I also set up a small WebSocket server to synchronize settings between users, so they could see each {"other's"} dice.
-        <br />
-        <br />
-        During the project I set up a nice <a href="https://www.blender.org/">Blender</a> workflow for generating dice textures that wrapped seamlessly around the model. Making textures still required time and skill, however, so I wanted to make it a community effort. To that end I created <a href="https://github.com/tobloef/roll20-fancy-dice/wiki/How-to-add-your-own-dice-to-the-extension">extensive documentation</a> for the process I had developed, which paid off when the project received a number of cool contributions from the community.
-      </p>
-    </div>,
-  },
-  {
-    key: "text2mindmap",
-    name: "Text2MindMap - Archive Edition",
-    thumbnail: images.text2mindmapScreenshot,
-    tags: [
-      Tags.JS,
-    ],
-    date: new Date("2018-03"),
-    options: {
-      thumbnailAlignment: "top"
-    },
-    description: <div>
-      <Image
-        src={images.text2mindmapScreenshot}
-        alt="Thumbnail"
-        height={1000}
-        objectFit={"contain"}
-      />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          <a href="https://tobloef.com/text2mindmap/">Homepage</a>
-        </p>
-        <p>
-          <b>Date:</b> Mar. 2018
-        </p>
-      </div>
-      <p>
-        Back in 2017 I was an avid user of <a href="https://text2mindmap.com/">text2mindmap.com</a>, so when it suddenly shut down I was keen to find an alternative. At the time no such thing existed so I cobbled together code from the old website with my own <Link href="/?project=markant" shallow>Markant editor</Link>. Originally intended just for personal use, the site quickly blew up and now services about ~20,000 users a month.
-        <br />
-        <br />
-        Seeing such an interest for the project, I have always wanted to give people a better alternative than my quick duct tape solution. So now {"I'm"} slowly tinkering away at a new version of the site, written completely from scratch for the collaborative web.
-      </p>
-    </div>,
-  },
-  {
     key: "nft",
     name: "Numerous Face Tokens - Mock trading site",
     thumbnail: images.nftFrontpage,
     tags: [
       Tags.TS,
+      Tags.REACT,
     ],
     date: new Date("2021-11"),
     options: {
@@ -590,22 +220,17 @@ const projects: Project[] = [
     </div>,
   },
   {
-    key: "creative",
-    name: "Creative Programming Sketches",
-    thumbnail: images.creativeExample,
+    key: "markant",
+    name: "Markant - An online Markdown editor",
+    thumbnail: images.markantThumbnail,
     tags: [
       Tags.JS,
     ],
-    date: new Date("2021-05"),
-    options: {
-      thumbnailAlignment: "top"
-    },
+    date: new Date("2017-02"),
     description: <div>
       <Image
-        src={images.creativeExample}
+        src={images.markantExample}
         alt="Thumbnail"
-        height={1000}
-        objectFit={"contain"}
       />
       <div style={{
         display: "flex",
@@ -614,21 +239,62 @@ const projects: Project[] = [
         <p>
           <b>Links:</b>
           {" "}
-          <a href="https://github.com/tobloef/creative">GitHub</a>
+          <a href="https://github.com/tobloef/markant">Github</a>
           {" / "}
-          <a href="https://tobloef.com/creative/sketches.html">List of sketches</a>
+          <a href="https://tobloef.com/markant/">Homepage</a>
         </p>
         <p>
-          <b>Date:</b> May 2021
+          <b>Date:</b> Feb. 2017
         </p>
       </div>
       <p>
-        A number of small generative art sketches. Each sketch takes a number of parameters controlled either with on-screen sliders or with a MIDI controller like the one pictured below using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API">WebMIDI</a>.
+        Markant is a web-based Markdown editor with support for LaTeX math notation. Originally meant to suit my own needs (studying Computer Science and Mathematics), I eventually decided to polish it up for other people to use. Built with vanilla HTML, CSS and JS, with a bit of jQuery, because I at the time wanted to get away from frameworks for a little while. It uses <a href="https://github.com/codemirror/dev/">CodeMirror</a> for text-editing, <a href="https://github.com/markdown-it/markdown-it">markdown-it</a> to render Markdown as HTML and <a href="https://github.com/KaTeX/KaTeX">KaTeX</a> to render LaTeX math.
+        <br />
+        <br />
+        Key takeaways from this project was strengthened my core web development skills, releasing a finished product to the public and dealing with feedback from users, and experimenting with marketing for software.
       </p>
+    </div>,
+  },
+  {
+    key: "roll20-dice",
+    name: "Roll20 Fancy Dice Chrome extension",
+    thumbnail: images.roll20DiceScreenshot,
+    tags: [
+      Tags.JS,
+    ],
+    date: new Date("2020-01"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
       <Image
-        src={images.creativeMidiController}
+        src={images.roll20DiceScreenshot}
         alt="Thumbnail"
       />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/roll20-fancy-dice">Github</a>
+          {" / "}
+          <a href="https://chrome.google.com/webstore/detail/custom-dice-for-roll20/hdjlljfnjnigpapdangkablekkoohdln">Chrome Web Store</a>
+        </p>
+        <p>
+          <b>Date:</b> Jan. 2020
+        </p>
+      </div>
+      <p>
+        A Chrome extension that adds fancier 3D dice to <a href="https://roll20.net/">Roll20</a>, an online virtual tabletop (VTT) for playing D&D and the like. Roll20 already support showing virtual dice when you roll during a game, but they are very plain and I wanted to give players a better opportunity to express themselves.
+        <br />
+        <br />
+        I accomplished this by writing a Chrome extension that would intercept requests to the Roll20 server, and inject its own behaviour in certain cases. This project was therefore largely a reverse engineering effort, working with the minified source code of Roll20. I also set up a small WebSocket server to synchronize settings between users, so they could see each {"other's"} dice.
+        <br />
+        <br />
+        During the project I set up a nice <a href="https://www.blender.org/">Blender</a> workflow for generating dice textures that wrapped seamlessly around the model. Making textures still required time and skill, however, so I wanted to make it a community effort. To that end I created <a href="https://github.com/tobloef/roll20-fancy-dice/wiki/How-to-add-your-own-dice-to-the-extension">extensive documentation</a> for the process I had developed, which paid off when the project received a number of cool contributions from the community.
+      </p>
     </div>,
   },
   {
@@ -677,14 +343,14 @@ const projects: Project[] = [
     </div>,
   },
   {
-    key: "base64",
-    name: "Specialized base64 viewer",
-    thumbnail: images.base64Example,
+    key: "realtime-editor",
+    name: "CollabCore - Real-time editor module",
+    thumbnail: images.realtimeEditorExample,
     tags: [
       Tags.TS,
-      Tags.WORK,
+      Tags.SVELTE
     ],
-    date: new Date("2022-03"),
+    date: new Date("2022-05"),
     options: {
       thumbnailAlignment: "top"
     },
@@ -696,9 +362,9 @@ const projects: Project[] = [
       }}
     >
       <Image
-        src={images.base64Example}
+        src={images.realtimeEditorExample}
         alt="Thumbnail"
-        height={1400}
+        height={600}
         objectFit={"contain"}
       />
       <div style={{
@@ -708,14 +374,275 @@ const projects: Project[] = [
         <p>
           <b>Links:</b>
           {" "}
-          <a href="https://clearvoyage.github.io/base64-viewer/">Homepage</a>
+          <a href="https://github.com/tobloef/realtime-editor">GitHub</a>
+          {" / "}
+          <a href="https://tobloef.com/realtime-editor/">Demo</a>
         </p>
         <p>
-          <b>Date:</b> Mar. 2022
+          <b>Date:</b> May 2022
         </p>
       </div>
       <p>
-        A small internal tool created at ClearVoyage to view certain report formats sent as base64-encoded data. Essentially original data is represented as JSON, which is then zipped and converted to base64. This tool reverses that process for easy viewing.
+        CollabCore is an attempt at building up a core set of real-time editing capabilities for use in future projects. I believe real-time collaboration can be immensely powerful and my plan is to expand a number of my existing projects to support this feature as well.
+        <br />
+        <br />
+        Internally it uses <a href="https://tiptap.dev/hocuspocus/">Hocuspocus</a> and <a href="https://github.com/yjs/yjs">Y.js</a> for the real-time capabilities, and <a href="https://prosemirror.net/">PromiseMirror</a> inside a <a href="https://svelte.dev/">Svelte</a> app for the editor.
+      </p>
+    </div>,
+  },
+  {
+    key: "ctf",
+    name: "Security CTFs",
+    thumbnail: images.ctfThumbnail,
+    tags: [
+      Tags.SECURITY,
+    ],
+    date: new Date("2017-10"),
+    options: {
+      thumbnailAlignment: "center"
+    },
+    description: <div>
+      <Image
+        src={images.ctfExample}
+        alt="Thumbnail"
+        height={700}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Write-ups:</b>
+          {" "}
+          <a href="https://tobloef.com/ctf/mitre-ctf-2017">Pwn2Win CTF Write-up</a>
+          {" / "}
+          <a href="https://tobloef.com/ctf/cybercamp-ctf-2017">CyberCamp CTF Quals</a>
+          {" / "}
+          <a href="https://tobloef.com/ctf/pwn2win-ctf-2017">STEM CTF</a>
+        </p>
+        <p>
+          <b>Date:</b> Oct. 2017
+        </p>
+      </div>
+      <p>
+        During Oct. 2017 I focused heavily on doing CTFs (a type of cyber security competition) in preparation for the <a href="https://ecsc.eu/">European Cyber Security Challenge</a> finals in Malaga. I focused mostly on web security, programming challenges and forensics, while the rest of my teammates on the Danish national team focused on other topics.
+        <br />
+        <br />
+        Along with these CTFs I made a number of write-ups of the challenges I had solved during the competitions. I believe write-ups like those are essential to the CTF ecosystem, as they allow everyone to learn from each other and crucially helps you solidify the knowledge you gained during the frantic competitions hours.
+      </p>
+    </div>,
+  },
+  {
+    key: "vowkeeper",
+    name: "Vowkeeper - Notebook/VTT for Ironsworn",
+    thumbnail: images.vowkeeperExample,
+    tags: [
+      Tags.TS,
+      Tags.SVELTE
+    ],
+    date: new Date("2021-08"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.vowkeeperExample}
+        alt="Thumbnail"
+        height={900}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/VowKeeper">GitHub</a>
+          {" / "}
+          <a href="https://tobloef.com/VowKeeper/">Demo</a>
+        </p>
+        <p>
+          <b>Date:</b> Aug. 2021
+        </p>
+      </div>
+      <p>
+        VowKeeper is a web-based Virtual Tabletop (VTT) for the free TTRPG <a href="https://www.ironswornrpg.com/">Ironsown</a>. It primarily focuses on solo-play and is therefore built like a rich notebook with domain-specific enhancements. For example, if you click on your character sheet to make a roll, this roll will be displayed in the {"game's"} log. You can then drag the roll into your notebook document as a small widget. Widgets like this can even be updated dynamically, based on later interactions.
+        <br />
+        <br />
+        Though the project is now abandoned, it was a nice introduction to <a>Svelte</a>. I also tried out various text-edtitor frameworks like <a href="https://prosemirror.net/">ProseMirror</a>, <a href="https://quilljs.com/">Quill</a>, <a href="https://editorjs.io/">Editor.js</a> and <a href="https://tiptap.dev/">Tiptap</a> (which is the one I ended up using).
+      </p>
+    </div>,
+  },
+  {
+    key: "set-solver",
+    name: "Webcam-based solver for Set",
+    thumbnail: images.setSolverThumbnail,
+    tags: [
+      Tags.PYTHON,
+    ],
+    date: new Date("2015-03"),
+    description: <div>
+      <Image
+        src={images.setSolverExample}
+        alt="Thumbnail"
+        height={1000}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          Lost to time
+        </p>
+        <p>
+          <b>Date:</b> Mar. 2015
+        </p>
+      </div>
+      <p>
+        Program to find sets in the popular puzzle card game <a href="https://www.playmonster.com/brands/set/">Set</a>. It used your webcam to look at the table and then highlighted valid solutions on the screen. It was implemented in Python with <a href="https://opencv.org/">OpenCV</a>.
+      </p>
+    </div>,
+  },
+  {
+    key: "fooblog",
+    name: "FooBlog - Blogging platform",
+    thumbnail: images.fooblogExample,
+    tags: [
+      Tags.JS,
+      Tags.REACT,
+    ],
+    date: new Date("2019-12"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.fooblogExample}
+        alt="Thumbnail"
+        height={900}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/fooblog">GitHub</a>
+        </p>
+        <p>
+          <b>Date:</b> Dec. 2019
+        </p>
+      </div>
+      <p>
+        FooBlog is a Medium-like blogging platform where you can view other users posts and register to write your own posts and comments. I created it to learn new web technologies, such as <a href="https://graphql.org/">GraphQL</a>, <a href="https://reactjs.org/docs/hooks-intro.html">React Hooks</a> and <a href="https://sequelize.org/">Sequelize</a>.
+      </p>
+    </div>,
+  },
+  {
+    key: "text2mindmap",
+    name: "Text2MindMap - Archive Edition",
+    thumbnail: images.text2mindmapScreenshot,
+    tags: [
+      Tags.JS,
+    ],
+    date: new Date("2018-03"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.text2mindmapScreenshot}
+        alt="Thumbnail"
+        height={1000}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://tobloef.com/text2mindmap/">Homepage</a>
+        </p>
+        <p>
+          <b>Date:</b> Mar. 2018
+        </p>
+      </div>
+      <p>
+        Back in 2017 I was an avid user of <a href="https://text2mindmap.com/">text2mindmap.com</a>, so when it suddenly shut down I was keen to find an alternative. At the time no such thing existed so I cobbled together code from the old website with my own <Link href="/?project=markant" shallow>Markant editor</Link>. Originally intended just for personal use, the site quickly blew up and now services about ~20,000 users a month.
+        <br />
+        <br />
+        Seeing such an interest for the project, I have always wanted to give people a better alternative than my quick duct tape solution. So now {"I'm"} slowly tinkering away at a new version of the site, written completely from scratch for the collaborative web.
+      </p>
+    </div>,
+  },
+  {
+    key: "polychat",
+    name: "PolyChat - Chat app in 3 languages",
+    thumbnail: images.polychatExample,
+    tags: [
+      Tags.JS,
+      Tags.GO,
+      Tags.ELIXIR,
+    ],
+    date: new Date("2017-04"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.polychatExample}
+        alt="Thumbnail"
+        height={900}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/PolyChat-Node.js-Backend">GitHub (Node.js)</a>
+          {" / "}
+          <a href="https://github.com/tobloef/PolyChat-Go-Backend">GitHub (Go)</a>
+          {" / "}
+          <a href="https://github.com/tobloef/Polychat-Elixir-Backend">GitHub (Elixir)</a>
+          {" / "}
+          <a href="https://github.com/tobloef/PolyChat-Frontend">GitHub (Frontend)</a>
+        </p>
+        <p>
+          <b>Date:</b> Apr. 2017
+        </p>
+      </div>
+      <p>
+        PolyChat is a small chat application with a plain HTML/JS frontend and three selectable backend. The three backends cover the same specs and were created to compare technologies.
       </p>
     </div>,
   },
@@ -810,27 +737,297 @@ const projects: Project[] = [
     </div>,
   },
   {
-    key: "fooblog",
-    name: "FooBlog - Blogging platform",
-    thumbnail: images.fooblogExample,
+    key: "projects",
+    name: "Project Portfolio",
+    thumbnail: images.projectsExample,
+    tags: [
+      Tags.TS,
+      Tags.REACT,
+    ],
+    date: new Date("2022-08"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.projectsExample}
+        alt="Thumbnail"
+        height={1200}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/projects">GitHub</a>
+          {" / "}
+          <Link href="/" shallow>Homepage</Link>
+        </p>
+        <p>
+          <b>Date:</b> Aug. 2022
+        </p>
+      </div>
+      <p>
+        This very site! I have wanted an overview of my projects like this for a long time, so when I recently had the opportunity to, I knew I had to take it. Technically, {"it's"} fairly simple, a static site generated with <a href="https://reactjs.org/">React</a> and <a href="https://nextjs.org/">Next.js</a>. I hope you find it interesting, let me know if you have any feedback.
+        <br />
+        <br />
+        Of course I {"couldn't"} fit everything. Many projects {"didn't"} fit nicely into a portfolio, as they were just experiments with different architectures or design patterns, without any tangible product. Other projects are simply too old for me not to be embarrassed about!
+      </p>
+    </div>,
+  },
+  {
+    key: "glitch-tool",
+    name: "Glitch Tool - For making glitch art",
+    thumbnail: images.glitchRose,
+    tags: [
+      Tags.PYTHON,
+    ],
+    date: new Date("2018-07"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.glitchViking}
+        alt="Thumbnail"
+        height={1200}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/glitch-tool">GitHub</a>
+          {" / "}
+          <a href="https://tobloef.com/fun/glitch-art">Article</a>
+          {" / "}
+          <a href="https://imgur.com/a/lh6NXGN">Gallery</a>
+        </p>
+        <p>
+          <b>Date:</b> Jul. 2018
+        </p>
+      </div>
+      <p>
+        During the summer of 2018 I had the opportunity to take part of a small community art exhibition. Lacking traditional art skills, I decided to experiment with <a href="https://en.wikipedia.org/wiki/Glitch_art">glitch art</a>. For this purpose I created a command-line tool to mess up image files in a number of different ways.
+        <br />
+        <br />
+        The tool was created in Python and manipulates raw bytes in order to generate interesting results. Since it just manipulates bytes regardless of file format, it can be used to generate a large variety of effects based on what format is used.
+      </p>
+    </div>,
+  },
+  {
+    key: "base64",
+    name: "Specialized base64 viewer",
+    thumbnail: images.base64Example,
+    tags: [
+      Tags.TS,
+      Tags.WORK,
+      Tags.REACT
+    ],
+    date: new Date("2022-03"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.base64Example}
+        alt="Thumbnail"
+        height={1400}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://clearvoyage.github.io/base64-viewer/">Homepage</a>
+        </p>
+        <p>
+          <b>Date:</b> Mar. 2022
+        </p>
+      </div>
+      <p>
+        A small internal tool created at ClearVoyage to view certain report formats sent as base64-encoded data. Essentially original data is represented as JSON, which is then zipped and converted to base64. This tool reverses that process for easy viewing.
+      </p>
+    </div>,
+  },
+  {
+    key: "card-fu",
+    name: "Card Fu - Online multiplayer card game",
+    thumbnail: images.cardFuThumbnail,
+    tags: [
+      Tags.JS,
+      Tags.GAME,
+    ],
+    date: new Date("2016-02"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.cardFuThumbnail}
+        alt="Thumbnail"
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/card-fu">Github</a>
+          {" / "}
+          <a href="https://cardfu.herokuapp.com/">Play the game</a>
+        </p>
+        <p>
+          <b>Date:</b> Feb. 2016
+        </p>
+      </div>
+      <p>
+        Card-Fu is an online multiplayer game based on {"Club Penguin's"} Card-Jitsu mini-game. Built with HTML5 Canvas, Node.js, and Socket.io.
+        <br />
+        <br />
+        This project was my introduction to both HTML5 Canvas and WebSockets, two technologies that I have enjoyed using ever since. To me they represent two of the most fun aspects of the web: Easily sharable graphics programing and real-time collaboration.
+      </p>
+    </div>,
+  },
+  {
+    key: "bird-in-paradise",
+    name: "A Bird in Paradise",
+    thumbnail: images.birdInParadiseThumbnail,
+    tags: [
+      Tags.GAME,
+      Tags.CSHARP,
+    ],
+    date: new Date("2018-12"),
+    options: {
+      thumbnailAlignment: "bottom"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/_WFx9qkayqU"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        style={{
+          margin: "0 auto",
+        }}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://ldjam.com/events/ludum-dare/43/a-bird-in-paradise">Ludum Dare Entry</a>
+        </p>
+        <p>
+          <b>Date:</b> Dec. 2018
+        </p>
+      </div>
+      <p>
+        A small game about flying and sacrificing people to the volcano god, made in Unity. Created by me and a two friends for the Ludum Dare 43 game jam, and was therefore made in just a few days. We placed 65th out of 2,508 in {"Fun"} and 270th overall.
+        <br />
+        <br />
+        I was primarily responsible for coding the movement system in C#, and it ended up being pretty satisfying in how you had to build and keep up your momentum. This project was also a good lesson in how much fun games can be, when they are made by (and for) people you know. A couple of my friends started speedrunning the game and discovered a number of cool exploits. I hope to one day explore this more, creating small games specifically for friends or the tools for others to do so.
+      </p>
+    </div>,
+  },
+  {
+    key: "yoto",
+    name: "You Only Tap Once - Casual Android game",
+    thumbnail: images.yotoThumbnail,
+    tags: [
+      Tags.JAVA,
+      Tags.GAME,
+    ],
+    date: new Date("2015-11"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.yotoThumbnail}
+        alt="Thumbnail"
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/you-only-tap-once">Github</a>
+          {" / "}
+          <a href="https://play.google.com/store/apps/details?id=com.tobloef.yoto.android">Google Play</a>
+        </p>
+        <p>
+          <b>Date:</b> Nov. 2015
+        </p>
+      </div>
+      <p>
+        You Only Tap Once is a simple mobile game about chain reactions. It was made with Java and the <a href="https://libgdx.com/">libGDX</a> game framework. My very first Open Source project.
+        <br />
+        <br />
+        After a few years of starting many small programming projects, I wanted to actually finish and release something. So I scoped this project to be as small as I possibly could and still call it a game. And it worked! I finished the game, and even had time to add a few {"\"nice to have\""} features. Looking back on the code now {"it's"} clear that this was early days for me. Still, at the time I was proud that I managed to release it.
+        <br />
+        <br />
+        I also made a <a href="https://www.lexaloffle.com/bbs/?tid=48888">Pico-8 version</a> many years later, as a sort of tribute.
+      </p>
+    </div>,
+  },
+  {
+    key: "creative",
+    name: "Creative Programming Sketches",
+    thumbnail: images.creativeExample,
     tags: [
       Tags.JS,
     ],
-    date: new Date("2019-12"),
+    date: new Date("2021-05"),
     options: {
       thumbnailAlignment: "top"
     },
-    description: <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
+    description: <div>
       <Image
-        src={images.fooblogExample}
+        src={images.creativeExample}
         alt="Thumbnail"
-        height={900}
+        height={1000}
         objectFit={"contain"}
       />
       <div style={{
@@ -840,138 +1037,38 @@ const projects: Project[] = [
         <p>
           <b>Links:</b>
           {" "}
-          <a href="https://github.com/tobloef/fooblog">GitHub</a>
-        </p>
-        <p>
-          <b>Date:</b> Dec. 2019
-        </p>
-      </div>
-      <p>
-        FooBlog is a Medium-like blogging platform where you can view other users posts and register to write your own posts and comments. I created it to learn new web technologies, such as <a href="https://graphql.org/">GraphQL</a>, <a href="https://reactjs.org/docs/hooks-intro.html">React Hooks</a> and <a href="https://sequelize.org/">Sequelize</a>.
-      </p>
-    </div>,
-  },
-  {
-    key: "realtime-editor",
-    name: "CollabCore - Real-time editor module",
-    thumbnail: images.realtimeEditorExample,
-    tags: [
-      Tags.TS,
-      Tags.SVELTE
-    ],
-    date: new Date("2022-05"),
-    options: {
-      thumbnailAlignment: "top"
-    },
-    description: <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
-      <Image
-        src={images.realtimeEditorExample}
-        alt="Thumbnail"
-        height={600}
-        objectFit={"contain"}
-      />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          <a href="https://github.com/tobloef/realtime-editor">GitHub</a>
+          <a href="https://github.com/tobloef/creative">GitHub</a>
           {" / "}
-          <a href="https://tobloef.com/realtime-editor/">Demo</a>
+          <a href="https://tobloef.com/creative/sketches.html">List of sketches</a>
         </p>
         <p>
-          <b>Date:</b> May 2022
+          <b>Date:</b> May 2021
         </p>
       </div>
       <p>
-        CollabCore is an attempt at building up a core set of real-time editing capabilities for use in future projects. I believe real-time collaboration can be immensely powerful and my plan is to expand a number of my existing projects to support this feature as well.
-        <br />
-        <br />
-        Internally it uses <a href="https://tiptap.dev/hocuspocus/">Hocuspocus</a> and <a href="https://github.com/yjs/yjs">Y.js</a> for the real-time capabilities, and <a href="https://prosemirror.net/">PromiseMirror</a> inside a <a href="https://svelte.dev/">Svelte</a> app for the editor.
+        A number of small generative art sketches. Each sketch takes a number of parameters controlled either with on-screen sliders or with a MIDI controller like the one pictured below using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API">WebMIDI</a>.
       </p>
-    </div>,
-  },
-  {
-    key: "vowkeeper",
-    name: "Vowkeeper - Notebook/VTT for Ironsworn",
-    thumbnail: images.vowkeeperExample,
-    tags: [
-      Tags.TS,
-      Tags.SVELTE
-    ],
-    date: new Date("2021-08"),
-    options: {
-      thumbnailAlignment: "top"
-    },
-    description: <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
       <Image
-        src={images.vowkeeperExample}
+        src={images.creativeMidiController}
         alt="Thumbnail"
-        height={900}
-        objectFit={"contain"}
       />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          <a href="https://github.com/tobloef/VowKeeper">GitHub</a>
-          {" / "}
-          <a href="https://tobloef.com/VowKeeper/">Demo</a>
-        </p>
-        <p>
-          <b>Date:</b> Aug. 2021
-        </p>
-      </div>
-      <p>
-        VowKeeper is a web-based Virtual Tabletop (VTT) for the free TTRPG <a href="https://www.ironswornrpg.com/">Ironsown</a>. It primarily focuses on solo-play and is therefore built like a rich notebook with domain-specific enhancements. For example, if you click on your character sheet to make a roll, this roll will be displayed in the {"game's"} log. You can then drag the roll into your notebook document as a small widget. Widgets like this can even be updated dynamically, based on later interactions.
-        <br />
-        <br />
-        Though the project is now abandoned, it was a nice introduction to <a>Svelte</a>. I also tried out various text-edtitor frameworks like <a href="https://prosemirror.net/">ProseMirror</a>, <a href="https://quilljs.com/">Quill</a>, <a href="https://editorjs.io/">Editor.js</a> and <a href="https://tiptap.dev/">Tiptap</a> (which is the one I ended up using).
-      </p>
     </div>,
   },
   {
-    key: "polychat",
-    name: "PolyChat - Chat app in 3 languages",
-    thumbnail: images.polychatExample,
+    key: "co2",
+    name: "CO₂ Monitoring Dashboard",
+    thumbnail: images.co2Thumbnail,
     tags: [
       Tags.JS,
-      Tags.GO,
-      Tags.ELIXIR,
     ],
-    date: new Date("2017-04"),
+    date: new Date("2019-01"),
     options: {
       thumbnailAlignment: "top"
     },
-    description: <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
+    description: <div>
       <Image
-        src={images.polychatExample}
+        src={images.co2Thumbnail}
         alt="Thumbnail"
-        height={900}
-        objectFit={"contain"}
       />
       <div style={{
         display: "flex",
@@ -980,20 +1077,19 @@ const projects: Project[] = [
         <p>
           <b>Links:</b>
           {" "}
-          <a href="https://github.com/tobloef/PolyChat-Node.js-Backend">GitHub (Node.js)</a>
+          <a href="https://github.com/tobloef/co2">Github</a>
           {" / "}
-          <a href="https://github.com/tobloef/PolyChat-Go-Backend">GitHub (Go)</a>
-          {" / "}
-          <a href="https://github.com/tobloef/Polychat-Elixir-Backend">GitHub (Elixir)</a>
-          {" / "}
-          <a href="https://github.com/tobloef/PolyChat-Frontend">GitHub (Frontend)</a>
+          <a href="https://tobloef.com/co2/">Dashboard</a>
         </p>
         <p>
-          <b>Date:</b> Apr. 2017
+          <b>Date:</b> Jan. 2019
         </p>
       </div>
       <p>
-        PolyChat is a small chat application with a plain HTML/JS frontend and three selectable backend. The three backends cover the same specs and were created to compare technologies.
+        Dashboard for monitoring CO₂ levels and temperature with a USB CO₂ sensor like <a href="https://www.amazon.com/CO2Meter-RAD-0301-Mini-Monitor-White/dp/B00H7HFINS">this one</a>. Made with HTML/CSS, Node.js, and Socket.io. The code is split into three parts: A web client for the dashboard, a server for receiving and storing data and a Node.js-based client for the machine connected to the CO₂ sensor (a Raspberry Pi for example).
+        <br />
+        <br />
+        Using this in environments with bad indoor climate really helped in staying fresh, reminding you to open the window <i>before</i> your head got too foggy instead of after.
       </p>
     </div>,
   },
