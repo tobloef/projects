@@ -138,51 +138,6 @@ const projects: Project[] = [
     </div>,
   },
   {
-    key: "nft",
-    name: "Numerous Face Tokens - Mock trading site",
-    thumbnail: images.nftFrontpage,
-    tags: [
-      Tags.TS,
-      Tags.REACT,
-    ],
-    date: new Date("2021-11"),
-    options: {
-      thumbnailAlignment: "top"
-    },
-    description: <div>
-      <Image
-        src={images.nftFrontpage}
-        alt="Thumbnail"
-        height={1100}
-        objectFit={"contain"}
-      />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          <a href="https://github.com/tobloef/numerous-face-tokens">GitHub</a>
-          {" / "}
-          <a href="https://server.tobloef.com/nft/react/">Homepage</a>
-        </p>
-        <p>
-          <b>Date:</b> Nov. 2021
-        </p>
-      </div>
-      <p>
-        A mock trading platform where people can buy and sell so-called <Link href="/?project=face-generator" shallow>Numerous Face Tokens</Link>. I designed this project to cover all the basics of a web app, with the intent to re-implement parts of the project using multiple technologies, as a <a href="https://en.wikipedia.org/wiki/Kata#Outside_martial_arts">kata</a> of sorts. I think this provides a valuable opportunity to experiment with new tools in a focused manner.
-        <br />
-        <br />
-        The initial version of the app was a React SPA frontend with a Rest-ish Node.js API on the backend and <a href="https://www.prisma.io/">Prisma ORM</a> for database access. I focused heavily on end-to-end type safety and iterated on an architecture that made this easy. In the end I concluded that while it was possible to achieve the level of type safety I wanted, it {"wasn't"} very fun with the tools I had chosen.
-        <br />
-        <br />
-        Next up will be trying out <a href="https://graphql.org/">GraphQL</a> (in progress), <a href="https://trpc.io/">tRPC</a> and SSR with <a href="https://nextjs.org/">Next.js</a>.
-      </p>
-    </div>,
-  },
-  {
     key: "clearvoyage",
     name: "ClearVoyage - Maritime VMS",
     thumbnail: images.cvVms,
@@ -218,11 +173,14 @@ const projects: Project[] = [
           <a href="https://www.clearvoyage.com/">Homepage</a>
         </p>
         <p>
-          <b>Date:</b> 2020-2022
+          <b>Date:</b> 2020-Present
         </p>
       </div>
       <p>
-
+        Modern Voyage Management System for the maritime industry. Built as a <a href="https://reactjs.org/">React</a> SPA with a <a href="https://nodejs.org/en/">Node.js</a> JSON API on the backend. This is project is the largest codebase I have worked at, clocking in at around 130,000 lines at the time of writing.
+        <br />
+        <br />
+        I joined the project about half a year into development and one of my primary responsibilities at the time, was setting on the CI/CD pipeline. After this I joined the core product team and later lead our migration from Javascript to TypeScript.
       </p>
     </div>,
   },
@@ -315,6 +273,51 @@ const projects: Project[] = [
         <br />
         <br />
         I was the primary developer on this project and was responsible for almost all development on both the kiosk app, web dashboard and the hardware integration. This was, at the time, the biggest project I had worked on and I learned a ton about managing large codebases, software architecture and even managing a few junior devs.
+      </p>
+    </div>,
+  },
+  {
+    key: "nft",
+    name: "Numerous Face Tokens - Mock trading site",
+    thumbnail: images.nftFrontpage,
+    tags: [
+      Tags.TS,
+      Tags.REACT,
+    ],
+    date: new Date("2021-11"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.nftFrontpage}
+        alt="Thumbnail"
+        height={1100}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/numerous-face-tokens">GitHub</a>
+          {" / "}
+          <a href="https://server.tobloef.com/nft/react/">Homepage</a>
+        </p>
+        <p>
+          <b>Date:</b> Nov. 2021
+        </p>
+      </div>
+      <p>
+        A mock trading platform where people can buy and sell so-called <Link href="/?project=face-generator" shallow>Numerous Face Tokens</Link>. I designed this project to cover all the basics of a web app, with the intent to re-implement parts of the project using multiple technologies, as a <a href="https://en.wikipedia.org/wiki/Kata#Outside_martial_arts">kata</a> of sorts. I think this provides a valuable opportunity to experiment with new tools in a focused manner.
+        <br />
+        <br />
+        The initial version of the app was a React SPA frontend with a Rest-ish Node.js API on the backend and <a href="https://www.prisma.io/">Prisma ORM</a> for database access. I focused heavily on end-to-end type safety and iterated on an architecture that made this easy. In the end I concluded that while it was possible to achieve the level of type safety I wanted, it {"wasn't"} very fun with the tools I had chosen.
+        <br />
+        <br />
+        Next up will be trying out <a href="https://graphql.org/">GraphQL</a> (in progress), <a href="https://trpc.io/">tRPC</a> and SSR with <a href="https://nextjs.org/">Next.js</a>.
       </p>
     </div>,
   },
