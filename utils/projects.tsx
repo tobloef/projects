@@ -25,7 +25,7 @@ export type Tag = {
 
 export const Tags = {
   WORK: {
-    name: "Work-related",
+    name: "Work",
     color: "#0fbe00",
   },
   TS: {
@@ -42,7 +42,7 @@ export const Tags = {
   },
   CSHARP: {
     name: "C#",
-    color: "#09F6A3",
+    color: "#01c27e",
   },
   PYTHON: {
     name: "Python",
@@ -63,6 +63,10 @@ export const Tags = {
   GO: {
     name: "Go",
     color: "#0077ff"
+  },
+  FSHARP: {
+    name: "F#",
+    color: "#01c27e"
   },
   ELIXIR: {
     name: "Elixir",
@@ -179,21 +183,29 @@ const projects: Project[] = [
     </div>,
   },
   {
-    key: "face-generator",
-    name: "Cartoon Face Generator",
-    thumbnail: images.faceGeneratorExample,
+    key: "clearvoyage",
+    name: "ClearVoyage - Maritime VMS",
+    thumbnail: images.cvVms,
     tags: [
-      Tags.JS,
+      Tags.TS,
+      Tags.REACT,
+      Tags.WORK,
     ],
-    date: new Date("2021-10"),
+    date: new Date("2020-05"),
     options: {
       thumbnailAlignment: "top"
     },
-    description: <div>
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
       <Image
-        src={images.faceGeneratorExample}
+        src={images.cvVms}
         alt="Thumbnail"
-        height={400}
+        height={1200}
         objectFit={"contain"}
       />
       <div style={{
@@ -203,19 +215,106 @@ const projects: Project[] = [
         <p>
           <b>Links:</b>
           {" "}
-          <a href="https://github.com/tobloef/face-generator">GitHub</a>
-          {" / "}
-          <a href="https://server.tobloef.com/faces/random.png">Generate a face</a> (refresh for a new one)
+          <a href="https://www.clearvoyage.com/">Homepage</a>
         </p>
         <p>
-          <b>Date:</b> Oct. 2021
+          <b>Date:</b> 2020-2022
         </p>
       </div>
       <p>
-        Created as a parody of CryptoPunks, this deliberately low-effort project turned out more fun than anticipated. Go to <a href="https://server.tobloef.com/faces/random.png">/random.png</a> for a random face. Or to a specific file name, like <a href="https://server.tobloef.com/faces/tobloef.png">/tobloef.png</a>, for a static one that uses the file name as the seed.
+
+      </p>
+    </div>,
+  },
+  {
+    key: "crew-app",
+    name: "Maritime Vessel Reporting App",
+    thumbnail: images.cvCrew,
+    tags: [
+      Tags.TS,
+      Tags.REACT,
+      Tags.WORK,
+    ],
+    date: new Date("2021-03"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.cvCrew}
+        alt="Thumbnail"
+        height={1200}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://www.clearvoyage.com/">Homepage</a>
+        </p>
+        <p>
+          <b>Date:</b> Mar. 2021
+        </p>
+      </div>
+      <p>
+
+      </p>
+    </div>,
+  },
+  {
+    key: "flexmat",
+    name: "FlexMat - Industrial vending machine",
+    thumbnail: images.flexmatHardware,
+    tags: [
+      Tags.JS,
+      Tags.REACT,
+      Tags.CSHARP,
+      Tags.WORK,
+    ],
+    date: new Date("2019-10"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.flexmatHardware}
+        alt="Thumbnail"
+        height={350}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://www.ilxsystem.dk/flexmat">Homepage</a>
+        </p>
+        <p>
+          <b>Date:</b> 2017 - 2020
+        </p>
+      </div>
+      <p>
+        Smart industrial vending machine solution for the automotive industry. With capabilities such as tracking inventory with weight sensors and automatically sending refill orders, this was quite a project complex. Apart from the <a href="https://www.electronjs.org/">Electron</a>-based kiosk app running on the machines, the project also had a <a href="">React</a>-based web dashboard for managing inventory, employees and customers. The hardware was controlled by custom <a href="https://www.arduino.cc/">Arduino</a> boards that talked to the kiosk app over ethernet.
         <br />
         <br />
-        Built with Node.js and <a href="https://sharp.pixelplumbing.com/">Sharp</a> for image processing. I later used the face generator in another project, <Link href={"/?project=nft"} shallow>Numerous Face Tokens</Link>.
+        I was the primary developer on this project and was responsible for almost all development on both the kiosk app, web dashboard and the hardware integration. This was, at the time, the biggest project I had worked on and I learned a ton about managing large codebases, software architecture and even managing a few junior devs.
       </p>
     </div>,
   },
@@ -597,6 +696,92 @@ const projects: Project[] = [
     </div>,
   },
   {
+    key: "face-generator",
+    name: "Cartoon Face Generator",
+    thumbnail: images.faceGeneratorExample,
+    tags: [
+      Tags.JS,
+    ],
+    date: new Date("2021-10"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.faceGeneratorExample}
+        alt="Thumbnail"
+        height={400}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/face-generator">GitHub</a>
+          {" / "}
+          <a href="https://server.tobloef.com/faces/random.png">Generate a face</a> (refresh for a new one)
+        </p>
+        <p>
+          <b>Date:</b> Oct. 2021
+        </p>
+      </div>
+      <p>
+        Created as a parody of CryptoPunks, this deliberately low-effort project turned out more fun than anticipated. Go to <a href="https://server.tobloef.com/faces/random.png">/random.png</a> for a random face. Or to a specific file name, like <a href="https://server.tobloef.com/faces/tobloef.png">/tobloef.png</a>, for a static one that uses the file name as the seed.
+        <br />
+        <br />
+        Built with Node.js and <a href="https://sharp.pixelplumbing.com/">Sharp</a> for image processing. I later used the face generator in another project, <Link href={"/?project=nft"} shallow>Numerous Face Tokens</Link>.
+      </p>
+    </div>,
+  },
+  {
+    key: "nem-cv",
+    name: "CV Generator with custom web framework",
+    thumbnail: images.nemCvThumbnail,
+    tags: [
+      Tags.JS,
+    ],
+    date: new Date("2019-05"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.nemCvExample}
+        alt="Thumbnail"
+        height={1000}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/nem-cv">GitHub</a>
+        </p>
+        <p>
+          <b>Date:</b> May 2019
+        </p>
+      </div>
+      <p>
+        A Squarespace-like CV generator web app created as part of a course at the IT University of Copenhagen. I was mostly responsible for implementing the designs created by another member of my group.
+        <br />
+        <br />
+        We wanted to try vanilla <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Web Components</a>, but after finding that lacking I ended up creating my own small component framework built on top of Web Components. The framework allowed you to easily define your HTML/CSS/JS inside a single reusable component, similar to <a href="https://vuejs.org/">Vue</a> or <a href="https://svelte.dev/">Svelte</a>. You can view an example of a component <a href="https://github.com/tobloef/nem-cv/blob/master/components/editor/SideBar.js">here</a>.
+      </p>
+    </div>,
+  },
+  {
     key: "polychat",
     name: "PolyChat - Chat app in 3 languages",
     thumbnail: images.polychatExample,
@@ -688,51 +873,6 @@ const projects: Project[] = [
         <br />
         <br />
         The application is capable on performance fuzzy address searching and route planing on large OSM datasets, as well as performant rendering at any zoom level. It was written in Java with <a href="https://openjfx.io/">JavaFX</a> for the UI.
-      </p>
-    </div>,
-  },
-  {
-    key: "nem-cv",
-    name: "CV Generator with custom web framework",
-    thumbnail: images.nemCvThumbnail,
-    tags: [
-      Tags.JS,
-    ],
-    date: new Date("2019-05"),
-    options: {
-      thumbnailAlignment: "top"
-    },
-    description: <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
-      <Image
-        src={images.nemCvExample}
-        alt="Thumbnail"
-        height={1000}
-        objectFit={"contain"}
-      />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          <a href="https://github.com/tobloef/nem-cv">GitHub</a>
-        </p>
-        <p>
-          <b>Date:</b> May 2019
-        </p>
-      </div>
-      <p>
-        A Squarespace-like CV generator web app created as part of a course at the IT University of Copenhagen. I was mostly responsible for implementing the designs created by another member of my group.
-        <br />
-        <br />
-        We wanted to try vanilla <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Web Components</a>, but after finding that lacking I ended up creating my own small component framework built on top of Web Components. The framework allowed you to easily define your HTML/CSS/JS inside a single reusable component, similar to <a href="https://vuejs.org/">Vue</a> or <a href="https://svelte.dev/">Svelte</a>. You can view an example of a component <a href="https://github.com/tobloef/nem-cv/blob/master/components/editor/SideBar.js">here</a>.
       </p>
     </div>,
   },
@@ -834,6 +974,92 @@ const projects: Project[] = [
     </div>,
   },
   {
+    key: "creative",
+    name: "Creative Programming Sketches",
+    thumbnail: images.creativeExample,
+    tags: [
+      Tags.JS,
+    ],
+    date: new Date("2021-05"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.creativeExample}
+        alt="Thumbnail"
+        height={1000}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/creative">GitHub</a>
+          {" / "}
+          <a href="https://tobloef.com/creative/sketches.html">List of sketches</a>
+        </p>
+        <p>
+          <b>Date:</b> May 2021
+        </p>
+      </div>
+      <p>
+        A number of small generative art sketches. Each sketch takes a number of parameters controlled either with on-screen sliders or with a MIDI controller like the one pictured below using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API">WebMIDI</a>.
+      </p>
+      <Image
+        src={images.creativeMidiController}
+        alt="Thumbnail"
+      />
+    </div>,
+  },
+  {
+    key: "speedcons",
+    name: "SpeedCons performance estimator",
+    thumbnail: images.cvSpeedcons,
+    tags: [
+      Tags.JS,
+      Tags.REACT,
+      Tags.WORK,
+    ],
+    date: new Date("2020-05"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.cvSpeedcons}
+        alt="Thumbnail"
+        height={1200}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://www.clearvoyage.com/">Homepage</a>
+        </p>
+        <p>
+          <b>Date:</b> May 2020
+        </p>
+      </div>
+      <p>
+
+      </p>
+    </div>,
+  },
+  {
     key: "base64",
     name: "Specialized base64 viewer",
     thumbnail: images.base64Example,
@@ -866,7 +1092,7 @@ const projects: Project[] = [
         <p>
           <b>Links:</b>
           {" "}
-          <a href="https://clearvoyage.github.io/base64-viewer/">Homepage</a>
+          Proprietary
         </p>
         <p>
           <b>Date:</b> Mar. 2022
@@ -874,6 +1100,50 @@ const projects: Project[] = [
       </div>
       <p>
         A small internal tool created at ClearVoyage to view certain report formats sent as base64-encoded data. Essentially original data is represented as JSON, which is then zipped and converted to base64. This tool reverses that process for easy viewing.
+      </p>
+    </div>,
+  },
+  {
+    key: "ilx-internal",
+    name: "Internal tools for ILX System",
+    thumbnail: images.leverandorservice,
+    tags: [
+      Tags.CSHARP,
+      Tags.JS,
+      Tags.WORK,
+    ],
+    date: new Date("2016-04"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.leverandorservice}
+        alt="Thumbnail"
+        height={1200}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          Proprietary
+        </p>
+        <p>
+          <b>Date:</b> Apr. 2016
+        </p>
+      </div>
+      <p>
+        During my time at ILX System I created several tools for internal use. Most of these had to do with invoicing, for example sending emails to customers or interfacing with NETS LeverandørService.
       </p>
     </div>,
   },
@@ -914,6 +1184,88 @@ const projects: Project[] = [
         <br />
         <br />
         This project was my introduction to both HTML5 Canvas and WebSockets, two technologies that I have enjoyed using ever since. To me they represent two of the most fun aspects of the web: Easily sharable graphics programing and real-time collaboration.
+      </p>
+    </div>,
+  },
+  {
+    key: "yoto",
+    name: "You Only Tap Once - Casual Android game",
+    thumbnail: images.yotoThumbnail,
+    tags: [
+      Tags.JAVA,
+      Tags.GAME,
+    ],
+    date: new Date("2015-11"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.yotoThumbnail}
+        alt="Thumbnail"
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/you-only-tap-once">Github</a>
+          {" / "}
+          <a href="https://play.google.com/store/apps/details?id=com.tobloef.yoto.android">Google Play</a>
+        </p>
+        <p>
+          <b>Date:</b> Nov. 2015
+        </p>
+      </div>
+      <p>
+        You Only Tap Once is a simple mobile game about chain reactions. It was made with Java and the <a href="https://libgdx.com/">libGDX</a> game framework. My very first Open Source project.
+        <br />
+        <br />
+        After a few years of starting many small programming projects, I wanted to actually finish and release something. So I scoped this project to be as small as I possibly could and still call it a game. And it worked! I finished the game, and even had time to add a few {"\"nice to have\""} features. Looking back on the code now {"it's"} clear that this was early days for me. Still, at the time I was proud that I managed to release it.
+        <br />
+        <br />
+        I also made a <a href="https://www.lexaloffle.com/bbs/?tid=48888">Pico-8 version</a> many years later, as a sort of tribute.
+      </p>
+    </div>,
+  },
+  {
+    key: "co2",
+    name: "CO₂ Monitoring Dashboard",
+    thumbnail: images.co2Thumbnail,
+    tags: [
+      Tags.JS,
+    ],
+    date: new Date("2019-01"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div>
+      <Image
+        src={images.co2Thumbnail}
+        alt="Thumbnail"
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/co2">Github</a>
+          {" / "}
+          <a href="https://tobloef.com/co2/">Dashboard</a>
+        </p>
+        <p>
+          <b>Date:</b> Jan. 2019
+        </p>
+      </div>
+      <p>
+        Dashboard for monitoring CO₂ levels and temperature with a USB CO₂ sensor like <a href="https://www.amazon.com/CO2Meter-RAD-0301-Mini-Monitor-White/dp/B00H7HFINS">this one</a>. Made with HTML/CSS, Node.js, and Socket.io. The code is split into three parts: A web client for the dashboard, a server for receiving and storing data and a Node.js-based client for the machine connected to the CO₂ sensor (a Raspberry Pi for example).
+        <br />
+        <br />
+        Using this in environments with bad indoor climate really helped in staying fresh, reminding you to open the window <i>before</i> your head got too foggy instead of after.
       </p>
     </div>,
   },
@@ -962,7 +1314,7 @@ const projects: Project[] = [
         </p>
       </div>
       <p>
-        A small game about flying and sacrificing people to the volcano god, made in Unity. Created by me and a two friends for the Ludum Dare 43 game jam, and was therefore made in just a few days. We placed 65th out of 2,508 in {"Fun"} and 270th overall.
+        A small game about flying and sacrificing people to a volcano. Made in Unity by me and a two friends for the 3-day Ludum Dare 43 game jam. We placed 65th out of 2,508 in {"Fun"} and 270th overall.
         <br />
         <br />
         I was primarily responsible for coding the movement system in C#, and it ended up being pretty satisfying in how you had to build and keep up your momentum. This project was also a good lesson in how much fun games can be, when they are made by (and for) people you know. A couple of my friends started speedrunning the game and discovered a number of cool exploits. I hope to one day explore this more, creating small games specifically for friends or the tools for others to do so.
@@ -970,64 +1322,27 @@ const projects: Project[] = [
     </div>,
   },
   {
-    key: "yoto",
-    name: "You Only Tap Once - Casual Android game",
-    thumbnail: images.yotoThumbnail,
+    key: "scrabble",
+    name: "Scrabble Bot",
+    thumbnail: images.scrabbleBotExample,
     tags: [
-      Tags.JAVA,
-      Tags.GAME,
+      Tags.FSHARP,
     ],
-    date: new Date("2015-11"),
+    date: new Date("2020-05"),
     options: {
       thumbnailAlignment: "top"
     },
-    description: <div>
-      <Image
-        src={images.yotoThumbnail}
-        alt="Thumbnail"
-      />
-      <div style={{
+    description: <div
+      style={{
         display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          <a href="https://github.com/tobloef/you-only-tap-once">Github</a>
-          {" / "}
-          <a href="https://play.google.com/store/apps/details?id=com.tobloef.yoto.android">Google Play</a>
-        </p>
-        <p>
-          <b>Date:</b> Nov. 2015
-        </p>
-      </div>
-      <p>
-        You Only Tap Once is a simple mobile game about chain reactions. It was made with Java and the <a href="https://libgdx.com/">libGDX</a> game framework. My very first Open Source project.
-        <br />
-        <br />
-        After a few years of starting many small programming projects, I wanted to actually finish and release something. So I scoped this project to be as small as I possibly could and still call it a game. And it worked! I finished the game, and even had time to add a few {"\"nice to have\""} features. Looking back on the code now {"it's"} clear that this was early days for me. Still, at the time I was proud that I managed to release it.
-        <br />
-        <br />
-        I also made a <a href="https://www.lexaloffle.com/bbs/?tid=48888">Pico-8 version</a> many years later, as a sort of tribute.
-      </p>
-    </div>,
-  },
-  {
-    key: "creative",
-    name: "Creative Programming Sketches",
-    thumbnail: images.creativeExample,
-    tags: [
-      Tags.JS,
-    ],
-    date: new Date("2021-05"),
-    options: {
-      thumbnailAlignment: "top"
-    },
-    description: <div>
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
       <Image
-        src={images.creativeExample}
+        src={images.scrabbleBotExample}
         alt="Thumbnail"
-        height={1000}
+        height={700}
         objectFit={"contain"}
       />
       <div style={{
@@ -1037,59 +1352,14 @@ const projects: Project[] = [
         <p>
           <b>Links:</b>
           {" "}
-          <a href="https://github.com/tobloef/creative">GitHub</a>
-          {" / "}
-          <a href="https://tobloef.com/creative/sketches.html">List of sketches</a>
+          Lost to time
         </p>
         <p>
-          <b>Date:</b> May 2021
+          <b>Date:</b> May 2020
         </p>
       </div>
       <p>
-        A number of small generative art sketches. Each sketch takes a number of parameters controlled either with on-screen sliders or with a MIDI controller like the one pictured below using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API">WebMIDI</a>.
-      </p>
-      <Image
-        src={images.creativeMidiController}
-        alt="Thumbnail"
-      />
-    </div>,
-  },
-  {
-    key: "co2",
-    name: "CO₂ Monitoring Dashboard",
-    thumbnail: images.co2Thumbnail,
-    tags: [
-      Tags.JS,
-    ],
-    date: new Date("2019-01"),
-    options: {
-      thumbnailAlignment: "top"
-    },
-    description: <div>
-      <Image
-        src={images.co2Thumbnail}
-        alt="Thumbnail"
-      />
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between"
-      }}>
-        <p>
-          <b>Links:</b>
-          {" "}
-          <a href="https://github.com/tobloef/co2">Github</a>
-          {" / "}
-          <a href="https://tobloef.com/co2/">Dashboard</a>
-        </p>
-        <p>
-          <b>Date:</b> Jan. 2019
-        </p>
-      </div>
-      <p>
-        Dashboard for monitoring CO₂ levels and temperature with a USB CO₂ sensor like <a href="https://www.amazon.com/CO2Meter-RAD-0301-Mini-Monitor-White/dp/B00H7HFINS">this one</a>. Made with HTML/CSS, Node.js, and Socket.io. The code is split into three parts: A web client for the dashboard, a server for receiving and storing data and a Node.js-based client for the machine connected to the CO₂ sensor (a Raspberry Pi for example).
-        <br />
-        <br />
-        Using this in environments with bad indoor climate really helped in staying fresh, reminding you to open the window <i>before</i> your head got too foggy instead of after.
+        A bot capable of playing scrabble at a high level, created as part of a course on functional programming at the IT University of Copenhagen. Care was taken to optimize the code, to allow for rapid playing on large boards. I enjoyed functional programming in F# quite a lot, and have taken many of the lessons I learned with me into my work with TypeScript.
       </p>
     </div>,
   },

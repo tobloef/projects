@@ -53,3 +53,14 @@ export { default as glitchRose } from "../public/images/glitch-tool/rose.png"
 export { default as glitchViking } from "../public/images/glitch-tool/viking.png"
 
 export { default as projectsExample } from "../public/images/projects/example.png"
+
+export { default as scrabbleBotExample } from "../public/images/scrabblebot/example.png"
+
+export { default as flexmatKiosk } from "../public/images/ilx-system/flexmat-kiosk.png"
+export { default as flexmatWeb } from "../public/images/ilx-system/flexmat-web.png"
+export { default as flexmatHardware } from "../public/images/ilx-system/flexmat-hardware.png"
+export { default as leverandorservice } from "../public/images/ilx-system/leverandorservice.png"
+
+export { default as cvVms } from "../public/images/clearvoyage/vms.png"
+export { default as cvCrew } from "../public/images/clearvoyage/crew.png"
+export { default as cvSpeedcons } from "../public/images/clearvoyage/speedcons.png"
