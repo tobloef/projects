@@ -31,10 +31,20 @@
 }
 
 .navbar a:not(:last-child) {
-    margin-right: 30px;
+    margin-right: 1em;
 }
 
 .navbar a svg {
     width: 1em;
     margin-right: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        font-size: 0.8em;
+    }
+
+    .navbar h1 {
+        display: none;
+    }
 }
