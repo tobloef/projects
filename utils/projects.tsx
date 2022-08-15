@@ -181,6 +181,9 @@ const projects: Project[] = [
         <br />
         <br />
         I joined the project about half a year into development and one of my primary responsibilities at the time, was setting on the CI/CD pipeline. After this I joined the core product team and later lead our migration from Javascript to TypeScript.
+        <br />
+        <br />
+        The project is hosted on AWS, with GitHub actions for CI/CD. On the frontend, the <a href="https://ant.design/">Ant Design</a> UI library is used. For the database we used <a href="https://www.postgresql.org/">PostgreSQL</a> with the <a href="https://sequelize.org/">Sequelize ORM</a>. Testing is done with a mixture of <a href="https://jestjs.io/">Jest</a> for unit test and integration tests and <a href="https://www.cypress.io/">Cypress</a> for end-to-end tests.
       </p>
     </div>,
   },
@@ -193,7 +196,7 @@ const projects: Project[] = [
       Tags.REACT,
       Tags.WORK,
     ],
-    date: new Date("2021-03"),
+    date: new Date("2021-02"),
     options: {
       thumbnailAlignment: "top"
     },
@@ -207,7 +210,7 @@ const projects: Project[] = [
       <Image
         src={images.cvCrew}
         alt="Thumbnail"
-        height={1200}
+        height={1400}
         objectFit={"contain"}
       />
       <div style={{
@@ -220,11 +223,20 @@ const projects: Project[] = [
           <a href="https://www.clearvoyage.com/">Homepage</a>
         </p>
         <p>
-          <b>Date:</b> Mar. 2021
+          <b>Date:</b> Feb. 2021
         </p>
       </div>
       <p>
-
+        Web app for voyage reporting on maritime vessels, created by me at ClearVoyage as part of my bachelor thesis. The application checks report data for errors, is capable of auto-filling certain fields and can even be set up to generate a multitude of report forms from a single input form.
+        <br />
+        <br />
+        To support spotty satellite internet when at sea, the app was made with an offline-first approach. Using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">service workers</a> the website can be accessed while offline and thanks to a custom syncing system data is sent to the API once back online.
+        <br />
+        <br />
+        The app had to support a diverse number of customer needs, so special care was put into the architecture of the project. The backend is structured based on Bob {"Martin's"} <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</a> and the frontend uses a custom system to generate UI in a data-driven manner.
+        <br />
+        <br />
+        For the tech stack I used Node.js and React, both with TypeScript. The build system is also a custom Webpack setup to a large monorepo with many smaller apps sharing code. For the database I used <a href="https://www.postgresql.org/">PostgreSQL</a> and <a href="https://www.sqlite.org/index.html">SQLite</a> with <a href="https://typeorm.io/">TypeORM</a>.
       </p>
     </div>,
   },
@@ -269,7 +281,7 @@ const projects: Project[] = [
         </p>
       </div>
       <p>
-        Smart industrial vending machine solution for the automotive industry. With capabilities such as tracking inventory with weight sensors and automatically sending refill orders, this was quite a project complex. Apart from the <a href="https://www.electronjs.org/">Electron</a>-based kiosk app running on the machines, the project also had a <a href="">React</a>-based web dashboard for managing inventory, employees and customers. The hardware was controlled by custom <a href="https://www.arduino.cc/">Arduino</a> boards that talked to the kiosk app over ethernet.
+        Smart industrial vending machine solution for the automotive industry. With capabilities such as tracking inventory with weight sensors and automatically sending refill orders, this was quite a project complex. Apart from the <a href="https://www.electronjs.org/">Electron</a>-based kiosk app running on the machines, the project also had a <a href="https://reactjs.org/">React</a>-based web dashboard for managing inventory, employees and customers. The hardware was controlled by custom <a href="https://www.arduino.cc/">Arduino</a> boards that talked to the kiosk app over ethernet.
         <br />
         <br />
         I was the primary developer on this project and was responsible for almost all development on both the kiosk app, web dashboard and the hardware integration. This was, at the time, the biggest project I had worked on and I learned a ton about managing large codebases, software architecture and even managing a few junior devs.
