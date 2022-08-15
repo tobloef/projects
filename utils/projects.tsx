@@ -75,6 +75,14 @@ export const Tags = {
   SVELTE: {
     name: "Svelte",
     color: "#FFAE00"
+  },
+  GO: {
+    name: "GO",
+    color: "#00acff"
+  },
+  ELIXIR: {
+    name: "Elixir",
+    color: "#ff76ec"
   }
 } as const;
 
@@ -936,6 +944,56 @@ const projects: Project[] = [
         <br />
         <br />
         Though the project is now abandoned, it was a nice introduction to <a>Svelte</a>. I also tried out various text-edtitor frameworks like <a href="https://prosemirror.net/">ProseMirror</a>, <a href="https://quilljs.com/">Quill</a>, <a href="https://editorjs.io/">Editor.js</a> and <a href="https://tiptap.dev/">Tiptap</a> (which is the one I ended up using).
+      </p>
+    </div>,
+  },
+  {
+    key: "polychat",
+    name: "PolyChat - Chat app in 3 languages",
+    thumbnail: images.polychatExample,
+    tags: [
+      Tags.JS,
+      Tags.GO,
+      Tags.ELIXIR,
+    ],
+    date: new Date("2017-04"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.polychatExample}
+        alt="Thumbnail"
+        height={900}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/PolyChat-Node.js-Backend">GitHub (Node.js)</a>
+          {" / "}
+          <a href="https://github.com/tobloef/PolyChat-Go-Backend">GitHub (Go)</a>
+          {" / "}
+          <a href="https://github.com/tobloef/Polychat-Elixir-Backend">GitHub (Elixir)</a>
+          {" / "}
+          <a href="https://github.com/tobloef/PolyChat-Frontend">GitHub (Frontend)</a>
+        </p>
+        <p>
+          <b>Date:</b> Apr. 2017
+        </p>
+      </div>
+      <p>
+        PolyChat is a small chat application with a plain HTML/JS frontend and three selectable backend. The three backends cover the same specs and were created to compare technologies.
       </p>
     </div>,
   },

@@ -46,3 +46,5 @@ export { default as fooblogExample } from "../public/images/fooblog/example.png"
 export { default as realtimeEditorExample } from "../public/images/realtime-editor/example.png"
 
 export { default as vowkeeperExample } from "../public/images/vowkeeper/example.png"
+
+export { default as polychatExample } from "../public/images/polychat/example.png"
