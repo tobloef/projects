@@ -146,7 +146,7 @@ const projects: Project[] = [
       Tags.REACT,
       Tags.WORK,
     ],
-    date: new Date("2020-05"),
+    date: new Date("2022-07"),
     options: {
       thumbnailAlignment: "top"
     },
@@ -196,7 +196,7 @@ const projects: Project[] = [
       Tags.REACT,
       Tags.WORK,
     ],
-    date: new Date("2021-02"),
+    date: new Date("2021-05"),
     options: {
       thumbnailAlignment: "top"
     },
@@ -250,7 +250,7 @@ const projects: Project[] = [
       Tags.CSHARP,
       Tags.WORK,
     ],
-    date: new Date("2019-10"),
+    date: new Date("2020-05"),
     options: {
       thumbnailAlignment: "top"
     },
@@ -899,7 +899,7 @@ const projects: Project[] = [
       Tags.TS,
       Tags.REACT,
     ],
-    date: new Date("2022-08"),
+    date: new Date("2022-08-16"),
     options: {
       thumbnailAlignment: "top"
     },

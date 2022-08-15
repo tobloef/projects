@@ -25,12 +25,12 @@ const sortOptions: Array<SortOption> = [
     value: (a, b) => 0,
   },
   {
-    label: "↑ Date (Oldest)",
-    value: (a, b) => a.date.valueOf() - b.date.valueOf(),
-  },
-  {
     label: "↓ Date (Newest)",
     value: (a, b) => b.date.valueOf() - a.date.valueOf(),
+  },
+  {
+    label: "↑ Date (Oldest)",
+    value: (a, b) => a.date.valueOf() - b.date.valueOf(),
   },
 ];
 
