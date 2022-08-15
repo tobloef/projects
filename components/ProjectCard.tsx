@@ -15,13 +15,15 @@ const ProjectCard = ({project}: ProjectCardProps) => {
     shallow
   >
     <div className={classes.card}>
-      <Image
-        src={project.thumbnail}
-        alt={`Thumbnail for ${project.name}`}
-        layout={"intrinsic"}
-        objectFit={"cover"}
-        objectPosition={project.options?.thumbnailAlignment ?? "top"}
-      />
+      <div className={classes.imageWrapper}>
+        <Image
+          src={project.thumbnail}
+          alt={`Thumbnail for ${project.name}`}
+          layout={"fill"}
+          objectFit={"cover"}
+          objectPosition={project.options?.thumbnailAlignment ?? "top"}
+        />
+      </div>
       <div className={classes.info}>
         <span className={classes.name}>{project.name}</span>
         <div className={classes.tags}>

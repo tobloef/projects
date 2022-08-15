@@ -1,66 +1,66 @@
-export { default as markantThumbnail} from "../public/images/markant/thumbnail.png";
-export { default as markantExample } from "../public/images/markant/example.png";
+export const markantThumbnail = "/projects/images/markant/thumbnail.png";
+export const markantExample = "/projects/images/markant/example.png";
 
-export { default as setSolverThumbnail } from "../public/images/set-solver/thumbnail.png";
-export { default as setSolverExample } from "../public/images/set-solver/example.jpeg";
+export const setSolverThumbnail = "/projects/images/set-solver/thumbnail.png";
+export const setSolverExample = "/projects/images/set-solver/example.jpeg";
 
-export { default as putPixThumbnail } from "../public/images/3d-renderer/thumbnail.png";
+export const putPixThumbnail = "/projects/images/3d-renderer/thumbnail.png";
 
-export { default as birdInParadiseThumbnail } from "../public/images/bird-in-paradise/thumbnail.jpeg"
+export const birdInParadiseThumbnail = "/projects/images/bird-in-paradise/thumbnail.jpeg"
 
-export { default as ctfThumbnail } from "../public/images/ctf/thumbnail.png"
-export { default as ctfExample } from "../public/images/ctf/example.png"
+export const ctfThumbnail = "/projects/images/ctf/thumbnail.png"
+export const ctfExample = "/projects/images/ctf/example.png"
 
-export { default as cardFuThumbnail } from "../public/images/card-fu/thumbnail.png"
+export const cardFuThumbnail = "/projects/images/card-fu/thumbnail.png"
 
-export { default as co2Thumbnail } from "../public/images/co2/thumbnail.png"
+export const co2Thumbnail = "/projects/images/co2/thumbnail.png"
 
-export { default as yotoThumbnail } from "../public/images/yoto/thumbnail.png"
+export const yotoThumbnail = "/projects/images/yoto/thumbnail.png"
 
-export { default as roll20DiceScreenshot } from "../public/images/roll20-dice/screenshot.png"
+export const roll20DiceScreenshot = "/projects/images/roll20-dice/screenshot.png"
 
-export { default as text2mindmapScreenshot } from "../public/images/text2mindmap/example.png"
+export const text2mindmapScreenshot = "/projects/images/text2mindmap/example.png"
 
-export { default as faceGeneratorExample } from "../public/images/face-generator/example.png"
+export const faceGeneratorExample = "/projects/images/face-generator/example.png"
 
-export { default as nftFrontpage } from "../public/images/nft/frontpage.png"
-export { default as nftNft } from "../public/images/nft/nft.png"
-export { default as nftNfts } from "../public/images/nft/nfts.png"
-export { default as nftUser } from "../public/images/nft/user.png"
-export { default as nftTrades } from "../public/images/nft/trades.png"
+export const nftFrontpage = "/projects/images/nft/frontpage.png"
+export const nftNft = "/projects/images/nft/nft.png"
+export const nftNfts = "/projects/images/nft/nfts.png"
+export const nftUser = "/projects/images/nft/user.png"
+export const nftTrades = "/projects/images/nft/trades.png"
 
-export { default as creativeExample } from "../public/images/creative/example.png"
-export { default as creativeMidiController } from "../public/images/creative/midi-controller.png"
+export const creativeExample = "/projects/images/creative/example.png"
+export const creativeMidiController = "/projects/images/creative/midi-controller.png"
 
-export { default as neuralnetThumbnail } from "../public/images/neuralnet/thumbnail.jpeg"
+export const neuralnetThumbnail = "/projects/images/neuralnet/thumbnail.jpeg"
 
-export { default as base64Example } from "../public/images/base64/example.png"
+export const base64Example = "/projects/images/base64/example.png"
 
-export { default as mapExample } from "../public/images/map/example.png"
+export const mapExample = "/projects/images/map/example.png"
 
-export { default as nemCvThumbnail } from "../public/images/nem-cv/thumbnail.png"
-export { default as nemCvExample } from "../public/images/nem-cv/example.png"
+export const nemCvThumbnail = "/projects/images/nem-cv/thumbnail.png"
+export const nemCvExample = "/projects/images/nem-cv/example.png"
 
-export { default as fooblogExample } from "../public/images/fooblog/example.png"
+export const fooblogExample = "/projects/images/fooblog/example.png"
 
-export { default as realtimeEditorExample } from "../public/images/realtime-editor/example.png"
+export const realtimeEditorExample = "/projects/images/realtime-editor/example.png"
 
-export { default as vowkeeperExample } from "../public/images/vowkeeper/example.png"
+export const vowkeeperExample = "/projects/images/vowkeeper/example.png"
 
-export { default as polychatExample } from "../public/images/polychat/example.png"
+export const polychatExample = "/projects/images/polychat/example.png"
 
-export { default as glitchRose } from "../public/images/glitch-tool/rose.png"
-export { default as glitchViking } from "../public/images/glitch-tool/viking.png"
+export const glitchRose = "/projects/images/glitch-tool/rose.png"
+export const glitchViking = "/projects/images/glitch-tool/viking.png"
 
-export { default as projectsExample } from "../public/images/projects/example.png"
+export const projectsExample = "/projects/images/projects/example.png"
 
-export { default as scrabbleBotExample } from "../public/images/scrabblebot/example.png"
+export const scrabbleBotExample = "/projects/images/scrabblebot/example.png"
 
-export { default as flexmatKiosk } from "../public/images/ilx-system/flexmat-kiosk.png"
-export { default as flexmatWeb } from "../public/images/ilx-system/flexmat-web.png"
-export { default as flexmatHardware } from "../public/images/ilx-system/flexmat-hardware.png"
-export { default as leverandorservice } from "../public/images/ilx-system/leverandorservice.png"
+export const flexmatKiosk = "/projects/images/ilx-system/flexmat-kiosk.png"
+export const flexmatWeb = "/projects/images/ilx-system/flexmat-web.png"
+export const flexmatHardware = "/projects/images/ilx-system/flexmat-hardware.png"
+export const leverandorservice = "/projects/images/ilx-system/leverandorservice.png"
 
-export { default as cvVms } from "../public/images/clearvoyage/vms.png"
-export { default as cvCrew } from "../public/images/clearvoyage/crew.png"
-export { default as cvSpeedcons } from "../public/images/clearvoyage/speedcons.png"
+export const cvVms = "/projects/images/clearvoyage/vms.png"
+export const cvCrew = "/projects/images/clearvoyage/crew.png"
+export const cvSpeedcons = "/projects/images/clearvoyage/speedcons.png"
