@@ -891,6 +891,54 @@ const projects: Project[] = [
       </p>
     </div>,
   },
+  {
+    key: "vowkeeper",
+    name: "Vowkeeper - Notebook/VTT for Ironsworn",
+    thumbnail: images.vowkeeperExample,
+    tags: [
+      Tags.TS,
+      Tags.SVELTE
+    ],
+    date: new Date("2021-08"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.vowkeeperExample}
+        alt="Thumbnail"
+        height={900}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/VowKeeper">GitHub</a>
+          {" / "}
+          <a href="https://tobloef.com/VowKeeper/">Demo</a>
+        </p>
+        <p>
+          <b>Date:</b> Aug. 2021
+        </p>
+      </div>
+      <p>
+        VowKeeper is a web-based Virtual Tabletop (VTT) for the free TTRPG <a href="https://www.ironswornrpg.com/">Ironsown</a>. It primarily focuses on solo-play and is therefore built like a rich notebook with domain-specific enhancements. For example, if you click on your character sheet to make a roll, this roll will be displayed in the {"game's"} log. You can then drag the roll into your notebook document as a small widget. Widgets like this can even be updated dynamically, based on later interactions.
+        <br />
+        <br />
+        Though the project is now abandoned, it was a nice introduction to <a>Svelte</a>. I also tried out various text-edtitor frameworks like <a href="https://prosemirror.net/">ProseMirror</a>, <a href="https://quilljs.com/">Quill</a>, <a href="https://editorjs.io/">Editor.js</a> and <a href="https://tiptap.dev/">Tiptap</a> (which is the one I ended up using).
+      </p>
+    </div>,
+  },
 ];
 
 export default projects;
