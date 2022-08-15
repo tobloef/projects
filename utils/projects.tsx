@@ -7,6 +7,7 @@ import {
   co2Thumbnail,
   faceGeneratorExample,
   nemCvThumbnail,
+  realtimeEditorExample,
   text2mindmapScreenshot,
   yotoThumbnail,
 } from "./images";
@@ -57,20 +58,24 @@ export const Tags = {
   },
   GAME: {
     name: "Game",
-    color: "#9a09f6",
+    color: "#9A09F6",
   },
   CSHARP: {
     name: "C#",
-    color: "#09f6a3",
+    color: "#09F6A3",
   },
   SECURITY: {
     name: "Security",
-    color: "#f60997",
+    color: "#F60997",
   },
   JAVA: {
     name: "Java",
-    color: "#1d397a",
+    color: "#1D397A",
   },
+  SVELTE: {
+    name: "Svelte",
+    color: "#FFAE00"
+  }
 } as const;
 
 export type TagKey = keyof typeof Tags;
@@ -294,6 +299,7 @@ const projects: Project[] = [
     thumbnail: images.cardFuThumbnail,
     tags: [
       Tags.JS,
+      Tags.GAME,
     ],
     date: new Date("2016-02"),
     options: {
@@ -372,6 +378,7 @@ const projects: Project[] = [
     thumbnail: images.yotoThumbnail,
     tags: [
       Tags.JAVA,
+      Tags.GAME,
     ],
     date: new Date("2015-11"),
     options: {
@@ -833,6 +840,54 @@ const projects: Project[] = [
       </div>
       <p>
         FooBlog is a Medium-like blogging platform where you can view other users posts and register to write your own posts and comments. I created it to learn new web technologies, such as <a href="https://graphql.org/">GraphQL</a>, <a href="https://reactjs.org/docs/hooks-intro.html">React Hooks</a> and <a href="https://sequelize.org/">Sequelize</a>.
+      </p>
+    </div>,
+  },
+  {
+    key: "realtime-editor",
+    name: "CollabCore - Real-time editor module",
+    thumbnail: images.realtimeEditorExample,
+    tags: [
+      Tags.TS,
+      Tags.SVELTE
+    ],
+    date: new Date("2022-05"),
+    options: {
+      thumbnailAlignment: "top"
+    },
+    description: <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={images.realtimeEditorExample}
+        alt="Thumbnail"
+        height={600}
+        objectFit={"contain"}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/realtime-editor">GitHub</a>
+          {" / "}
+          <a href="https://tobloef.com/realtime-editor/">Demo</a>
+        </p>
+        <p>
+          <b>Date:</b> May 2022
+        </p>
+      </div>
+      <p>
+        CollabCore is an attempt at building up a core set of real-time editing capabilities for use in future projects. I believe real-time collaboration can be immensely powerful and my plan is to expand a number of my existing projects to support this feature as well.
+        <br />
+        <br />
+        Internally it uses <a href="https://tiptap.dev/hocuspocus/">Hocuspocus</a> and <a href="https://github.com/yjs/yjs">Y.js</a> for the real-time capabilities, and <a href="https://prosemirror.net/">PromiseMirror</a> inside a <a href="https://svelte.dev/">Svelte</a> app for the editor.
       </p>
     </div>,
   },
