@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   basePath: "/projects",
+  assetPrefix: "/projects/",
   experimental: {
     images: {
       unoptimized: true
