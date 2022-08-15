@@ -1171,8 +1171,7 @@ const projects: Project[] = [
       <p>
         This very site! I have wanted an overview of my projects like this for a long time, so when
         I recently had the opportunity to, I knew I had to take it. Technically, {"it's"} fairly
-        simple, a static site generated with <a href="https://reactjs.org/">React</a> and <a
-        href="https://nextjs.org/">Next.js</a>. I hope you find it interesting, let me know if you
+        simple, a static site generated with <a href="https://reactjs.org/">React</a>. I hope you find it interesting, let me know if you
         have any feedback.
         <br/>
         <br/>
