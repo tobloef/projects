@@ -9,8 +9,6 @@ body {
 
 html,
 body,
-body > div:first-child,
-div#__next,
-div#__next > div {
+div#root {
     height: 100%;
 }

@@ -1,9 +1,8 @@
 import { Project } from "../utils/projects";
 import classes from "./ProjectCard.module.css"
-import Image from "next/image";
 import { getTagStyle } from "../utils/getTagStyle";
 import { CSSProperties } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 type ProjectCardProps = {
   project: Project,
@@ -11,18 +10,16 @@ type ProjectCardProps = {
 
 const ProjectCard = ({project}: ProjectCardProps) => {
   return <Link
-    href={`/?project=${project.key}`}
-    shallow
+    to={`/?project=${project.key}`}
+    className={classes.link}
   >
     <div className={classes.card}>
-      <div className={classes.imageWrapper}>
-        <Image
-          src={project.thumbnail}
-          alt={`Thumbnail for ${project.name}`}
-          layout={"fill"}
-          objectFit={"cover"}
-          objectPosition={project.options?.thumbnailAlignment ?? "top"}
-        />
+      <div className={classes.imageWrapper} style={{
+        backgroundImage: `url(${project.thumbnail})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}>
+
       </div>
       <div className={classes.info}>
         <span className={classes.name}>{project.name}</span>

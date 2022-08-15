@@ -38,6 +38,10 @@
 }
 
 .imageWrapper {
-	position: relative;
 	flex: 1;
+}
+
+.link {
+	text-decoration: none;
+	color: inherit;
 }

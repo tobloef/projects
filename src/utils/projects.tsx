@@ -1,9 +1,7 @@
 import { ReactNode } from "react";
-import Image, { StaticImageData } from "next/image";
 import * as images from "./images";
 import { Property } from "csstype";
-import Link from "next/link";
-import { projectsExample } from "./images";
+import { Link } from "react-router-dom";
 
 export type Project = {
   key: string,
@@ -103,17 +101,11 @@ const projects: Project[] = [
       thumbnailAlignment: "center",
     },
     description: <div>
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
-          src={images.putPixThumbnail}
-          alt="Thumbnail"
-          objectFit={"contain"}
-        />
-      </div>
+      <img
+        src={images.putPixThumbnail}
+        alt="Thumbnail"
+        height={350}
+      />
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -172,17 +164,11 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.cvVms}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -238,17 +224,12 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+
+        <img
+          height={350}
           src={images.cvCrew}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -312,17 +293,12 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 300,
-      }}>
-        <Image
-          layout={"fill"}
+
+        <img
+          height={300}
           src={images.flexmatHardware}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -367,17 +343,12 @@ const projects: Project[] = [
       thumbnailAlignment: "top",
     },
     description: <div>
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+
+        <img
+          height={350}
           src={images.nftFrontpage}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -395,7 +366,7 @@ const projects: Project[] = [
       </div>
       <p>
         A mock trading platform where people can buy and sell so-called <Link
-        href="/?project=face-generator" shallow>Numerous Face Tokens</Link>. I designed this project
+        to="/?project=face-generator">Numerous Face Tokens</Link>. I designed this project
         to cover all the basics of a web app, with the intent to re-implement parts of the project
         using multiple technologies, as a <a
         href="https://en.wikipedia.org/wiki/Kata#Outside_martial_arts">kata</a> of sorts. I think
@@ -423,16 +394,11 @@ const projects: Project[] = [
     ],
     date: new Date("2017-02"),
     description: <div>
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.markantExample}
           alt="Thumbnail"
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -476,16 +442,13 @@ const projects: Project[] = [
       thumbnailAlignment: "top",
     },
     description: <div>
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+
+
+        <img
+          height={350}
           src={images.roll20DiceScreenshot}
           alt="Thumbnail"
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -545,17 +508,11 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 250,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={250}
           src={images.neuralnetThumbnail}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -601,17 +558,11 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
           src={images.realtimeEditorExample}
           alt="Thumbnail"
-          objectFit={"contain"}
+          height={350}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -652,17 +603,12 @@ const projects: Project[] = [
       thumbnailAlignment: "center",
     },
     description: <div>
-      <div style={{
-        position: "relative",
-        height: 300,
-      }}>
-        <Image
-          layout={"fill"}
+
+        <img
+          height={300}
           src={images.ctfExample}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -713,17 +659,11 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.vowkeeperExample}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -765,17 +705,12 @@ const projects: Project[] = [
     ],
     date: new Date("2015-03"),
     description: <div>
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+
+        <img
+          height={350}
           src={images.setSolverExample}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -816,18 +751,14 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 350,
-        border: "1px solid #ccc"
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.fooblogExample}
           alt="Thumbnail"
-          objectFit={"contain"}
+          style={{
+            border: "1px solid #ccc",
+          }}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -862,17 +793,11 @@ const projects: Project[] = [
       thumbnailAlignment: "top",
     },
     description: <div>
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.text2mindmapScreenshot}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -890,7 +815,7 @@ const projects: Project[] = [
         Back in 2017 I was an avid user of <a href="https://text2mindmap.com/">text2mindmap.com</a>,
         so when it suddenly shut down I was keen to find an alternative. At the time no such thing
         existed so I cobbled together code from the old website with my own <Link
-        href="/?project=markant" shallow>Markant editor</Link>. Originally intended just for
+        to="/?project=markant">Markant editor</Link>. Originally intended just for
         personal use, the site quickly blew up and now services about ~20,000 users a month.
         <br/>
         <br/>
@@ -912,17 +837,11 @@ const projects: Project[] = [
       thumbnailAlignment: "top",
     },
     description: <div>
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.faceGeneratorExample}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -949,9 +868,8 @@ const projects: Project[] = [
         <br/>
         <br/>
         Built with Node.js and <a href="https://sharp.pixelplumbing.com/">Sharp</a> for image
-        processing. I later used the face generator in another project, <Link href={"/?project=nft"}
-                                                                              shallow>Numerous Face
-        Tokens</Link>.
+        processing. I later used the face generator in another project, <Link to={"/?project=nft"}>Numerous
+        Face Tokens</Link>.
       </p>
     </div>,
   },
@@ -973,17 +891,11 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.nemCvExample}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -1033,17 +945,11 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.polychatExample}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -1087,17 +993,11 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.mapExample}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -1142,17 +1042,11 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.projectsExample}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -1162,7 +1056,7 @@ const projects: Project[] = [
           {" "}
           <a href="https://github.com/tobloef/projects">GitHub</a>
           {" / "}
-          <Link href="/" shallow>Homepage</Link>
+          <Link to="/">Homepage</Link>
         </p>
         <p>
           <b>Date:</b> Aug. 2022
@@ -1171,7 +1065,8 @@ const projects: Project[] = [
       <p>
         This very site! I have wanted an overview of my projects like this for a long time, so when
         I recently had the opportunity to, I knew I had to take it. Technically, {"it's"} fairly
-        simple, a static site generated with <a href="https://reactjs.org/">React</a>. I hope you find it interesting, let me know if you
+        simple, a static site generated with <a href="https://reactjs.org/">React</a>. I hope you
+        find it interesting, let me know if you
         have any feedback.
         <br/>
         <br/>
@@ -1200,17 +1095,11 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.glitchViking}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -1253,17 +1142,11 @@ const projects: Project[] = [
       thumbnailAlignment: "top",
     },
     description: <div>
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.creativeExample}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -1285,16 +1168,11 @@ const projects: Project[] = [
         below using <a
         href="https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API">WebMIDI</a>.
       </p>
-      <div style={{
-        position: "relative",
-        height: 200,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={200}
           src={images.creativeMidiController}
           alt="Thumbnail"
         />
-      </div>
     </div>,
   },
   {
@@ -1317,17 +1195,11 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.cvSpeedcons}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -1342,7 +1214,7 @@ const projects: Project[] = [
         </p>
       </div>
       <p>
-
+        Maritime vessel performance estimator. Built with React and Node.js.
       </p>
     </div>,
   },
@@ -1366,17 +1238,11 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.base64Example}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -1417,17 +1283,11 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.leverandorservice}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -1461,16 +1321,11 @@ const projects: Project[] = [
       thumbnailAlignment: "top",
     },
     description: <div>
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.cardFuThumbnail}
           alt="Thumbnail"
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -1510,16 +1365,11 @@ const projects: Project[] = [
       thumbnailAlignment: "top",
     },
     description: <div>
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.yotoThumbnail}
           alt="Thumbnail"
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -1566,16 +1416,11 @@ const projects: Project[] = [
       thumbnailAlignment: "top",
     },
     description: <div>
-      <div style={{
-        position: "relative",
-        height: 350,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={350}
           src={images.co2Thumbnail}
           alt="Thumbnail"
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -1681,17 +1526,11 @@ const projects: Project[] = [
         justifyContent: "center",
       }}
     >
-      <div style={{
-        position: "relative",
-        height: 400,
-      }}>
-        <Image
-          layout={"fill"}
+        <img
+          height={400}
           src={images.scrabbleBotExample}
           alt="Thumbnail"
-          objectFit={"contain"}
         />
-      </div>
       <div style={{
         display: "flex",
         justifyContent: "space-between",

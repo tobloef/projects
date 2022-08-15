@@ -27,6 +27,12 @@
 	overflow: hidden;
 }
 
+.modal img {
+	max-width: 100%;
+	display: block;
+	margin: auto;
+}
+
 .header {
 	display: flex;
 	font-weight: bold;

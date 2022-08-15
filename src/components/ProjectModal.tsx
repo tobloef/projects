@@ -2,7 +2,6 @@ import { Project } from "../utils/projects";
 import classes from "./ProjectModal.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/pro-solid-svg-icons";
-import Image from "next/image";
 import { getTagStyle } from "../utils/getTagStyle";
 import { CSSProperties } from "react";
 

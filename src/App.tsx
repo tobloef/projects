@@ -1,18 +1,18 @@
-import Navbar from "../components/Navbar";
-import classes from "./index.module.css";
-import Parameters from "../components/Parameters";
-import ProjectCard from "../components/ProjectCard";
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Parameters from "./components/Parameters";
+import ProjectCard from "./components/ProjectCard";
+import ProjectModal from "./components/ProjectModal";
+import { SortFunc } from "./utils/types";
 import projects, {
   Project,
   Tag,
-} from "../utils/projects";
-import { useState } from "react";
-import { SortFunc } from "../utils/types";
-import { useRouter } from "next/router";
-import ProjectModal from "../components/ProjectModal";
+} from "./utils/projects";
+import classes from "./App.module.css";
+import { useSearchParams } from "react-router-dom";
 
-export default function Index() {
-  const router = useRouter();
+export default function App() {
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const [filterTags, setFilterTags] = useState<string[]>([]);
   const [sortFunc, setSortFunc] = useState<SortFunc<Project> | null>(null);
@@ -41,8 +41,8 @@ export default function Index() {
         </div>
       </main>
       <ProjectModal
-        project={projects.find((p) => p.key === router.query.project)}
-        onClose={() => router.push("/")}
+        project={projects.find((p) => p.key === searchParams.get("project"))}
+        onClose={() => setSearchParams({})}
       />
     </div>
   )
