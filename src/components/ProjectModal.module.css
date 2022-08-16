@@ -31,6 +31,7 @@
 	max-width: 100%;
 	display: block;
 	margin: auto;
+	object-fit: contain;
 }
 
 .header {
@@ -72,4 +73,14 @@
 	padding: 20px 80px 30px 80px;
 	overflow-y: auto;
 	overflow-x: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+	.content {
+		padding: 20px;
+	}
+
+	.modal {
+		height: 1000px;
+	}
 }
