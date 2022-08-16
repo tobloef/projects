@@ -1,10 +1,14 @@
 .navbar {
     display: flex;
     flex-direction: row;
-    background-image: radial-gradient(circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
+    background: #0f2027;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     filter: drop-shadow(0px -5px 15px rgba(0, 0, 0, 0.45));
     color: hsla(0, 0%, 100%);
     padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .navbar > * {
