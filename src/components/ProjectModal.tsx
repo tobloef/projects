@@ -1,7 +1,7 @@
 import { Project } from "../utils/projects";
 import classes from "./ProjectModal.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/pro-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { getTagStyle } from "../utils/getTagStyle";
 import { CSSProperties } from "react";
 

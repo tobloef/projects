@@ -66,3 +66,7 @@ export const leverandorservice = `${BASE_PATH}/images/ilx-system/leverandorservi
 export const cvVms = `${BASE_PATH}/images/clearvoyage/vms.png`
 export const cvCrew = `${BASE_PATH}/images/clearvoyage/crew.png`
 export const cvSpeedcons = `${BASE_PATH}/images/clearvoyage/speedcons.png`
+
+export const boulderingTrackerScreenshot = `${BASE_PATH}/images/bouldering-tracker/screenshot.png`
+
+export const plungerGameScreenshot = `${BASE_PATH}/images/plunger-game/screenshot.png`

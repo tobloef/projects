@@ -17,7 +17,7 @@ const ProjectCard = ({project}: ProjectCardProps) => {
       <div className={classes.imageWrapper} style={{
         backgroundImage: `url(${project.thumbnail})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: project.options?.thumbnailAlignment ?? "center",
       }}>
 
       </div>

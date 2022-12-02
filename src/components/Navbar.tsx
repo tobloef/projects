@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenNib } from "@fortawesome/pro-solid-svg-icons";
+import { faPenNib } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,

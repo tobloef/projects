@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import * as images from "./images";
 import { Property } from "csstype";
 import { Link } from "react-router-dom";
+import YouTube from "react-youtube";
 
 export type Project = {
   key: string,
@@ -88,13 +89,101 @@ export type TagKey = keyof typeof Tags;
 
 const projects: Project[] = [
   {
+    key: "bouldering-tracker",
+    name: "Bouldering Tracker",
+    thumbnail: images.boulderingTrackerScreenshot,
+    tags: [
+      Tags.TS,
+      Tags.REACT,
+    ],
+    date: new Date("2022-12"),
+    options: {
+      thumbnailAlignment: "top",
+    },
+    description: <div>
+      <img
+        src={images.boulderingTrackerScreenshot}
+        alt="Thumbnail"
+        height={350}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between",
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://github.com/tobloef/bouldering-tracker">Github</a>
+          {" / "}
+          <a href="https://tobloef.com/bouldering-tracker/">App</a>
+        </p>
+        <p>
+          <b>Date:</b> Dec. 2022
+        </p>
+      </div>
+      <p>
+        I needed a simple bouldering tracker for my own personal needs, so I made this. Other apps were either too cumbersome or didn't support the custom grades I needed for my local gyms. It's meant to be mobile-first, but it also works on desktop.
+        <br/>
+        <br/>
+        The website is made with React and Supabase, and I have to give a special shoutout to Supabase here. For a weekend project like this, Supabase made it incredibly easy to set up authentication, database and API hosting. I especially love the row-level security feature on the DB, which basically allowed my to keep what little business logic I have to the client and the database, without the need for an API layer.
+      </p>
+    </div>,
+  },
+  {
+    key: "plunger-game",
+    name: "Plunger Game Prototype",
+    thumbnail: images.plungerGameScreenshot,
+    tags: [
+      Tags.GAME,
+      Tags.CSHARP,
+    ],
+    date: new Date("2022-10"),
+    options: {
+      thumbnailAlignment: "center",
+    },
+    description: <div>
+      <img
+        src={images.plungerGameScreenshot}
+        alt="Thumbnail"
+        height={350}
+      />
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between",
+      }}>
+        <p>
+          <b>Links:</b>
+          {" "}
+          <a href="https://www.tiktok.com/@untexturedrat">TikTok</a>
+          {" / "}
+          <a href="https://www.instagram.com/untexturedrat/">Instagram</a>
+          {" / "}
+          <a href="https://twitter.com/UntexturedRat">Twitter</a>
+          {" / "}
+          <a href="https://www.youtube.com/@untexturedrat">YouTube</a>
+        </p>
+        <p>
+          <b>Date:</b> Oct. 2022
+        </p>
+      </div>
+      <p>
+        A small game prototype I made in Unity. I wanted to experiment with mesh deformation, tweening and game feel in general, so I needed a simple concept that would allow me to focus on these aspects. I somehow arrived at this concept where you fling a plunger around an obstacle course. The prototype ended up being more satisfying than expected, so I polished up the prototype and created a demo build for a local LAN party. People liked the game, but in the end I didn't feel enough passion for the project to continue it.
+        <br />
+        <br />
+        <YouTube videoId="ols7gyZbuUQ" />
+        <br />
+        <br />
+        During the project I wanted to experiment with posting clips from development, as I thought the game concept had potential to be eye catching. I ended up posting 6 videoes to 4 different sites (linked above), and learned some interesting things about each platform. In terms of views, TikTok did the best by far, with <a href="https://www.tiktok.com/@untexturedrat/video/7159224229643177222">one of the videos</a> gaining more than a million views. The engagement per view was a lot better on Instagram and Twitter, and what little audience I gained there felt more "real". I hope to experiement further with this in the future, when I make other prototypes.
+      </p>
+    </div>,
+  },
+  {
     key: "3d-renderer",
     name: "PutPix - 3D renderer from scratch",
     thumbnail: images.putPixThumbnail,
     tags: [
       Tags.TS,
       Tags.RUST,
-      Tags.WIP,
     ],
     date: new Date("2022-08"),
     options: {
