@@ -143,11 +143,7 @@ the custom grades I needed for my local gyms. It's meant to be mobile-first, but
       thumbnailAlignment: "center",
     },
     description: <div>
-      <img
-        src={images.plungerGameScreenshot}
-        alt="Thumbnail"
-        height={350}
-      />
+        <YouTube videoId="ols7gyZbuUQ" />      
       <div style={{
         display: "flex",
         justifyContent: "space-between",
@@ -169,9 +165,6 @@ the custom grades I needed for my local gyms. It's meant to be mobile-first, but
       </div>
       <p>
         A small game prototype I made in Unity. I wanted to experiment with mesh deformation, tweening and game feel in general, so I needed a simple concept that would allow me to focus on these aspects. I somehow arrived at this concept where you fling a plunger around an obstacle course. The prototype ended up being more satisfying than expected, so I polished up the prototype and created a demo build for a local LAN party. People liked the game, but in the end I didn't feel enough passion for the project to continue it.
-        <br />
-        <br />
-        <YouTube videoId="ols7gyZbuUQ" />
         <br />
         <br />
         During the project I wanted to experiment with posting clips from development, as I thought the game concept had potential to be eye catching. I ended up posting 6 videoes to 4 different sites (linked above), and learned some interesting things about each platform. In terms of views, TikTok did the best by far, with <a href="https://www.tiktok.com/@untexturedrat/video/7159224229643177222">one of the videos</a> gaining more than a million views. The engagement per view was a lot better on Instagram and Twitter, and what little audience I gained there felt more "real". I hope to experiement further with this in the future, when I make other prototypes.
