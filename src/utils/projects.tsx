@@ -122,7 +122,8 @@ const projects: Project[] = [
         </p>
       </div>
       <p>
-        I needed a simple bouldering tracker for my own personal needs, so I made this. Other apps were either too cumbersome or didn't support the custom grades I needed for my local gyms. It's meant to be mobile-first, but it also works on desktop.
+        I needed a simple bouldering tracker for my own personal training, so I made this. Other apps were either too cumbersome or didn't support 
+the custom grades I needed for my local gyms. It's meant to be mobile-first, but it also works on desktop.
         <br/>
         <br/>
         The website is made with React and Supabase, and I have to give a special shoutout to Supabase here. For a weekend project like this, Supabase made it incredibly easy to set up authentication, database and API hosting. I especially love the row-level security feature on the DB, which basically allowed my to keep what little business logic I have to the client and the database, without the need for an API layer.
